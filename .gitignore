@@ -1,0 +1,11 @@
+/.bundle
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/log/*
+/tmp/*
+#/config/application.yml
+public/uploads
+
+.routes.txt.swp
+# Ignore application configuration
+#/config/application.yml
