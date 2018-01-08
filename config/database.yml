@@ -27,8 +27,8 @@ default: &default
 development:
   <<: *default
   database: casmo_clap_dev
-  username: ratnakar
-  password: 
+  username: postgres
+  password: postgres
   host: localhost
 
   # The specified database role being used to connect to postgres.
@@ -64,8 +64,8 @@ development:
 test:
   <<: *default
   database: casmo_clap_test
-  username: ratnakar
-  password: 
+  username: postgres
+  password: postgres
   host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -90,5 +90,5 @@ test:
 production:
   <<: *default
   database: casmo_clap_production
-  username: ratnakar
-  password: 
+  username: postgres
+  password: postgres
