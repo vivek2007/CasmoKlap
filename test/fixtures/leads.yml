@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sub_category_id: 1
+  sub_package_id: 1
+  user_id: 1
+  employee_id: 1
+  status: MyString
+
+two:
+  name: MyString
+  sub_category_id: 1
+  sub_package_id: 1
+  user_id: 1
+  employee_id: 1
+  status: MyString

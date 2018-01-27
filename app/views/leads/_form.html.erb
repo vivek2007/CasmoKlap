@@ -1,0 +1,16 @@
+<%= simple_form_for(@lead) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :sub_category_id %>
+    <%= f.input :sub_package_id %>
+    <%= f.input :user_id %>
+    <%= f.input :employee_id %>
+    <%= f.input :status %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

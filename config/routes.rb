@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :leads
+  resources :sub_packages
+  resources :packages
+  resources :sub_categories
   resources :categories
   get 'home/index'
 

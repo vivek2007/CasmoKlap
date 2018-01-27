@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sub_package.name %>
+</p>
+
+<p>
+  <strong>Package:</strong>
+  <%= @sub_package.package_id %>
+</p>
+
+<%= link_to 'Edit', edit_sub_package_path(@sub_package) %> |
+<%= link_to 'Back', sub_packages_path %>

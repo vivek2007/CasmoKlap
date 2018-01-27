@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sub Packages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Package</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_packages.each do |sub_package| %>
+      <tr>
+        <td><%= sub_package.name %></td>
+        <td><%= sub_package.package_id %></td>
+        <td><%= link_to 'Show', sub_package %></td>
+        <td><%= link_to 'Edit', edit_sub_package_path(sub_package) %></td>
+        <td><%= link_to 'Destroy', sub_package, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub Package', new_sub_package_path %>

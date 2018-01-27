@@ -2,13 +2,15 @@
 lock "~> 3.10.0"
 
 set :application, "casmoclap"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :repo_url, "git@github.com:vivek2007/CasmoKlap.git"
+set :rvm_ruby_version, '2.4.1'      # Defaults to: 'default'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, "master"
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
+set :deploy_to, "/var/www/rails_apps/casmoclap"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -21,7 +23,13 @@ set :repo_url, "git@example.com:me/my_repo.git"
 # set :pty, true
 
 # Default value for :linked_files is []
-# append :linked_files, "config/database.yml", "config/secrets.yml"
+ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+
+set :rails_env, "production"
+set :deploy_via, :remote_cache
+set :keep_releases, 3
+
+set :linked_dirs, fetch(:linked_dirs) + %w{public/uploads}
 
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
