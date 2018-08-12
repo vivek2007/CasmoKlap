@@ -3157,7 +3157,7 @@ footer{
 
 .banerInfo .form-control {
 	border-left: 1px solid #a9a9a9;
-	 background: #fff url(http://localhost:3000/assets/articles/map.png) no-repeat 12px 21px;
+	background-image: #fff url(articles/map.png) no-repeat 12px 21px;
 }
 .selectdiv {
   position: relative;
@@ -3181,7 +3181,7 @@ display: none;
   content: '';
   color: #333;
   left: 5px;
-  background: #fff url(http://localhost:3000/assets/articles/select.png) no-repeat;
+  background-image: #fff url(articles/select.png) no-repeat;
   width: 40px;
   height: 39px;
   z-index: 4;
@@ -3650,7 +3650,7 @@ i.fa.fa-heart-o.active:before{
     }
 }
 .countUpSection{
-    background-image:url(http://localhost:3000/assets/background/bg-countdown.jpg);
+    background-image:url(background/bg-countdown.jpg);
     background-attachment:fixed;
     width:100%;
     background-size:cover;
@@ -3735,7 +3735,7 @@ i.fa.fa-heart-o.active:before{
     box-shadow:none
 }
 .countUpSection.countUpVerTwo{
-    background-image:url(http://localhost:3000/assets/background/bg-countdown-1.jpg);
+    background-image:url(background/bg-countdown-1.jpg);
     padding:60px 0
 }
 @media(min-width:768px){
@@ -4299,7 +4299,7 @@ figure:hover .overlay{
     visibility:visible
 }
 .appDownload{
-    background-image:url(http://localhost:3000/assets/background/bg-download.jpg);
+    background-image:url(background/bg-download.jpg);
     background-attachment:fixed;
     width:100%;
     background-size:cover;
@@ -8109,32 +8109,36 @@ body.rtl .checkbox .pull-right.link{
     }
 }
 body.default{
-    background-image:url(../options/pattern1.png);
+    background-image:url(options/pattern1.png);
     background-repeat:repeat;
     background-attachment:fixed;
     background-position:center
 }
 body.pattern-01{
-    background-image:url(../options/pattern4.png);
+    background-image:url(options/pattern4.png);
     background-repeat:repeat;
     background-attachment:fixed;
     background-position:center
 }
 body.pattern-02{
-    background-image:url(../options/pattern2.png);
+    background-image:url(options/pattern2.png);
     background-repeat:repeat;
     background-attachment:fixed;
     background-position:center
 }
 body.pattern-03{
-    background-image:url(../options/pattern3.png);
+    background-image:url(options/pattern3.png);
     background-repeat:repeat;
     background-attachment:fixed;
     background-position:center
 }
 body.pattern-04{
-    background-image:url(../options/pattern4.png);
+    background-image:url(options/pattern4.png);
     background-repeat:repeat;
     background-attachment:fixed;
     background-position:center
+}
+
+.homeBanner {
+    background-image:url(banner/banner1.jpg);
 }
