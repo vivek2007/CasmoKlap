@@ -14,13 +14,18 @@
  *= require font-awesome.min
  *= require datepicker.min
  *= require select_option1
- *= require owl.carousel.min
+ *= require owl.carousel
  *= require jquery.fancybox.min
  *= require animate
  *= require style
  *= require default
  *= require_self
  */
+
+/*@font-face {
+  font-family: "Fontawesome-Webfont";
+  src: url('<%=assets/fontawesome-webfont.wof%>') format("truetype");
+}*/
 
 @font-face {
 font-family: 'fontawesome';
