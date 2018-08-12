@@ -21,6 +21,7 @@
  *= require animate
  *= require style
  *= require default
+ *= require_self
  */
 
 /*@font-face {
