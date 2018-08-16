@@ -10,8 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require jquery-ui.min
  *= require bootstrap_and_overrides
  *= require font-awesome.min
+ *= require listyicons/style
  *= require datepicker.min
  *= require select_option1
  *= require owl.carousel
@@ -22,14 +24,9 @@
  *= require_self
  */
 
-/*@font-face {
-  font-family: "Fontawesome-Webfont";
-  src: url('<%=assets/fontawesome-webfont.wof%>') format("truetype");
-}*/
-
 @font-face {
-font-family: 'fontawesome';
-src: url('fontawesome-webfont.eot') format('truetype');
-src: url('fontawesome-webfont.woff') format('truetype');
-src: url('fontawesome-webfont.woff2') format('truetype');
+	font-family: 'fontawesome';
+	src: url('fontawesome-webfont.eot') format('truetype');
+	src: url('fontawesome-webfont.woff') format('truetype');
+	src: url('fontawesome-webfont.woff2') format('truetype');
 }
