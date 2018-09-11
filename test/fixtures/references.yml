@@ -2,8 +2,10 @@
 
 one:
   name: MyString
-  package_id: 1
+  contact: 
+  profile_id: 1
 
 two:
   name: MyString
-  package_id: 1
+  contact: 
+  profile_id: 1

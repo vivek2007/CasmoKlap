@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_type: MyString
+  name_on_id: MyString
+  id_number: 
+  id_front_image: 
+  id_back_image: 
+  lane1: MyString
+  lan2: MyString
+  colony: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  declaration: MyString
+  qualification: MyString
+  experiance: 1
+  alternate_contact: 
+  main_contact: 
+  online_presence: MyString
+  business_name: MyString
+  price_per_session: 1.5
+  specialization: 
+  localities: MyText
+  introduction: MyText
+  degree_available: false
+  service_location: MyString
+  avatar: 
+  user_id: 1
+
+two:
+  id_type: MyString
+  name_on_id: MyString
+  id_number: 
+  id_front_image: 
+  id_back_image: 
+  lane1: MyString
+  lan2: MyString
+  colony: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  declaration: MyString
+  qualification: MyString
+  experiance: 1
+  alternate_contact: 
+  main_contact: 
+  online_presence: MyString
+  business_name: MyString
+  price_per_session: 1.5
+  specialization: 
+  localities: MyText
+  introduction: MyText
+  degree_available: false
+  service_location: MyString
+  avatar: 
+  user_id: 1

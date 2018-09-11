@@ -3,7 +3,6 @@
   <div class="nav-wrapper">
     <!-- NAVBAR -->
     <nav id="menuBar" class="navbar navbar-default transparent-navbar " role="navigation">
-      <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -19,12 +18,30 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class=""><a href="blog.html">Blog </a></li>
-            <li class=""><a href="blog.html">Login/ Sign Up</a></li>
+            <% unless user_signed_in? %>
+              <li class=""><a href="blog.html">Blog </a></li>
+              <li class=""><%= link_to "Login/ Sign Up", new_user_session_path %></li>
+              <li><%= link_to "Become A Professional", "/users/sign_up?professional=professional", :class=> "btn btn-default navbar-btn" %></li>
+            <% else %>
+                <li class="pull-right">
+                  <%= current_user.full_name %>
+                </li>
+                <li class="">
+                  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+                </li>
+                <li class="pull-right">
+                  <%= link_to('Create Profile', profiles_path ) %>
+                </li>
+            <% end %>
           </ul>
         </div>
-        <a class="btn btn-default navbar-btn" href="#"> + <span>Become A Professional</span></a>
-      </div>
     </nav>
   </div>
 </header>
+
+
+<style type="text/css">
+  .navbar-brand{
+    margin-left: 215px;    
+  }
+</style>

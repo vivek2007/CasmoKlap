@@ -2,6 +2,10 @@
 
 one:
   name: MyString
+  desc: MyText
+  parent_id: 1
 
 two:
   name: MyString
+  desc: MyText
+  parent_id: 1

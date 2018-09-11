@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SubPackageTest < ActiveSupport::TestCase
+class CertificateTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

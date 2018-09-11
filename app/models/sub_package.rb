@@ -1,2 +1,0 @@
-class SubPackage < ApplicationRecord
-end

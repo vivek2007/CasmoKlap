@@ -1,0 +1,25 @@
+<%#= render :partial => "appraiser_tabs" %>
+<div class="row">
+  <div class="col-md-10">
+<%= simple_form_for @profile, :url => wizard_path, :method => :put,  :html => {:multipart => true, :class => "form-horizontal"},
+            wrapper: :horizontal_form,
+            wrapper_mappings: {
+              check_boxes: :horizontal_radio_and_checkboxes,
+              radio_buttons: :horizontal_radio_and_checkboxes,
+              file: :horizontal_file_input,
+              boolean: :horizontal_boolean
+            } do |f| %>
+
+            <%= f.simple_fields_for :profile, @profile do |a| %>
+              <%= a.input :qualification %>
+            <% end %>
+          <%= f.submit "Save and Continue", :class => "btn btn-success pull-right"%>
+<% end %>
+</div>
+</div>
+<style type="text/css">
+  form {
+    width: 250px;
+    margin: 123px auto;
+}
+</style>

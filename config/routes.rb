@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :packages
   resources :sub_categories
   resources :categories
+  resources :profiles
   get 'home/index'
 
   devise_for :users

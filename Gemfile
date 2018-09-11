@@ -23,6 +23,8 @@ gem "twitter-bootstrap-rails"
 group :assets do
   gem 'therubyracer'
 end
+
+gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git', branch: 'master' 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -39,6 +41,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem "twitter-bootstrap-rails"
 gem 'owlcarousel-rails'
+gem "rolify"
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'wicked'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -64,8 +70,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'haml'
-gem 'simple_form'
 
 gem 'devise'
