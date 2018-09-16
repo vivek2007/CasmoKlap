@@ -13,10 +13,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.string :state
       t.string :country
       t.string :declaration
-      t.string :qualification
-      t.integer :experiance
       t.bigint :alternate_contact
-      t.bigint :main_contact
       t.string :online_presence
       t.string :business_name
       t.float :price_per_session
@@ -27,6 +24,9 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.string :service_location
       t.attachment :avatar
       t.integer :user_id
+      t.string :last_step
+      t.integer :experience_in_years
+      t.integer :experience_in_months
 
       t.timestamps
     end

@@ -24,14 +24,16 @@
               <li><%= link_to "Become A Professional", "/users/sign_up?professional=professional", :class=> "btn btn-default navbar-btn" %></li>
             <% else %>
                 <li class="pull-right">
-                  <%= current_user.full_name %>
+                  <%= (current_user.full_name || current_user.email) %>
                 </li>
                 <li class="">
                   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
                 </li>
-                <li class="pull-right">
-                  <%= link_to('Create Profile', profiles_path ) %>
-                </li>
+                <% unless current_user.is_customer? %>
+                  <li class="pull-right">
+                    <%= link_to('Create Profile', profiles_path ) %>
+                  </li>
+                <% end %>
             <% end %>
           </ul>
         </div>

@@ -3,7 +3,7 @@
     <%= form_for @profile, :url => wizard_path, :method => :put, :html => { :multipart => true } do |f| %>
         <div class="form-group">
           <label for="profile_avatar">Profile Image</label>
-          <%= f.file_field "avatar", id: "profile_avatar", :class => "form-control" %>
+          <%= f.file_field "avatar", id: "profile_avatar", :class => "form-control", :required => true %>
         </div>
       <%= f.submit :class => "btn btn-success pull-right identity-proof-submit"%>
     <% end %>

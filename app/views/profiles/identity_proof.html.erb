@@ -3,7 +3,7 @@
     <%= form_for @profile, :url => wizard_path, :method => :put, :html => { :multipart => true } do |f| %>
       <div class="form-group">
         <label for="id_type">Type of Id</label>
-        <%= f.select :id_type, options_for_select([['Voter Id', '0'] ,['Aadhaar', '1']]), id: "id_type", :class => "form-control" %>
+        <%= f.select :id_type, options_for_select([['Voter Id', '0'] ,['Aadhaar', '1']]), id: "id_type", :class => "form-control", :required => true %>
       <div class="voder_id_form hide">
         <div class="form-group">
           <label for="name_on_id">Name on Id</label>

@@ -44,6 +44,7 @@ gem 'owlcarousel-rails'
 gem "rolify"
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'wicked'
+gem "nested_form_fields"
 
 
 # Use Capistrano for deployment

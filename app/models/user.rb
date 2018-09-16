@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   rolify
-  has_one :profile
+  has_one :profile, dependent: :destroy
   belongs_to :category, optional: true
 
   def self.roles
@@ -27,4 +27,5 @@ class User < ApplicationRecord
   def get_last_step
     self.last_step.nil? ? :identity_proof : self.last_step
   end
+
 end

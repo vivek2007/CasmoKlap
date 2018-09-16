@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180910192200) do
+ActiveRecord::Schema.define(version: 20180913174434) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -68,10 +68,7 @@ ActiveRecord::Schema.define(version: 20180910192200) do
     t.string "state"
     t.string "country"
     t.string "declaration"
-    t.string "qualification"
-    t.integer "experiance"
     t.bigint "alternate_contact"
-    t.bigint "main_contact"
     t.string "online_presence"
     t.string "business_name"
     t.float "price_per_session", limit: 24
@@ -85,9 +82,18 @@ ActiveRecord::Schema.define(version: 20180910192200) do
     t.bigint "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.integer "user_id"
+    t.string "last_step"
+    t.integer "experience_in_years"
+    t.integer "experience_in_months"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "last_step"
+  end
+
+  create_table "qualifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.integer "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "references", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

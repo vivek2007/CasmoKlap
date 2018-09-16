@@ -13,10 +13,7 @@ one:
   state: MyString
   country: MyString
   declaration: MyString
-  qualification: MyString
-  experiance: 1
   alternate_contact: 
-  main_contact: 
   online_presence: MyString
   business_name: MyString
   price_per_session: 1.5
@@ -41,10 +38,7 @@ two:
   state: MyString
   country: MyString
   declaration: MyString
-  qualification: MyString
-  experiance: 1
   alternate_contact: 
-  main_contact: 
   online_presence: MyString
   business_name: MyString
   price_per_session: 1.5

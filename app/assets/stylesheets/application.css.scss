@@ -57,11 +57,7 @@ p.form-title
   letter-spacing: 4px;
 }
 
-form
-{
-  width: 250px;
-  margin: 0 auto;
-}
+
 
 form.login input[type="email"], form.login input[type="password"], form.signup input[type="email"], form.signup input[type="password"], form.signup input[type="password_confirmation"]
 {
@@ -219,4 +215,7 @@ body {
   position:absolute;
   bottom:0;
   left:0;
+}
+#user_category_id{
+  height: 40px;
 }
