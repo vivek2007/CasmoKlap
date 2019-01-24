@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20180913174434) do
 
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.text "desc"
     t.integer "parent_id"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20180913174434) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "certificates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "certificates", force: :cascade do |t|
     t.string "certificate_avatar_file_name"
     t.string "certificate_avatar_content_type"
     t.bigint "certificate_avatar_file_size"
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 20180913174434) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "leads", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "leads", force: :cascade do |t|
     t.string "name"
     t.integer "sub_category_id"
     t.integer "sub_package_id"
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 20180913174434) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "packages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "packages", force: :cascade do |t|
     t.string "name"
     t.text "desc"
     t.integer "parent_id"
@@ -49,7 +52,7 @@ ActiveRecord::Schema.define(version: 20180913174434) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "profiles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "profiles", force: :cascade do |t|
     t.string "id_type"
     t.string "name_on_id"
     t.bigint "id_number"
@@ -71,7 +74,7 @@ ActiveRecord::Schema.define(version: 20180913174434) do
     t.bigint "alternate_contact"
     t.string "online_presence"
     t.string "business_name"
-    t.float "price_per_session", limit: 24
+    t.float "price_per_session"
     t.string "specialization"
     t.text "localities"
     t.text "introduction"
@@ -89,14 +92,14 @@ ActiveRecord::Schema.define(version: 20180913174434) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "qualifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "qualifications", force: :cascade do |t|
     t.string "name"
     t.integer "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "references", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "references", force: :cascade do |t|
     t.string "name"
     t.bigint "contact"
     t.integer "profile_id"
@@ -104,7 +107,7 @@ ActiveRecord::Schema.define(version: 20180913174434) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
     t.bigint "resource_id"
@@ -115,7 +118,7 @@ ActiveRecord::Schema.define(version: 20180913174434) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -136,7 +139,7 @@ ActiveRecord::Schema.define(version: 20180913174434) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "users_roles", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users_roles", id: false, force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "role_id"
     t.index ["role_id"], name: "index_users_roles_on_role_id"
@@ -144,7 +147,7 @@ ActiveRecord::Schema.define(version: 20180913174434) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
-  create_table "work_photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "work_photos", force: :cascade do |t|
     t.string "photo_file_name"
     t.string "photo_content_type"
     t.bigint "photo_file_size"
