@@ -24,6 +24,18 @@
  *= require_self
  */
 
+
+.form-group .file{
+  visibility: visible !important;
+  position: unset !important;
+}
+
+.file {
+  visibility: visible !important;
+  position: unset !important;
+  
+}
+
 @font-face {
 	font-family: 'fontawesome';
 	src: url('fontawesome-webfont.eot') format('truetype');
