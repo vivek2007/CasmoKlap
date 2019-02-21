@@ -42,7 +42,8 @@ gem 'jbuilder', '~> 2.5'
 gem "twitter-bootstrap-rails"
 gem 'owlcarousel-rails'
 gem "rolify"
-gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+#gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'carrierwave'
 gem 'wicked'
 gem "nested_form_fields"
 
