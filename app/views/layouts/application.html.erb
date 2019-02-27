@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Casmoclap" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "OyeAbhi" %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -36,37 +36,37 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
     <![endif]-->
   </head>
-  <body>
-
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Casmoclap</a>
-        <div class="navbar-collapse collapse navbar-responsive-collapse">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Categories",categories_path  %></li>
-          </ul>
+  <body id="body" class="body-wrapper boxed-menu">
+<!--     <div id="preloader" class="smooth-loader-wrapper">
+      <div class="smooth-loader">
+        <div class="loader1">
+          <div class="loader-target">
+            <div class="loader-target-main"></div>
+            <div class="loader-target-inner"></div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
-      </div><!--/row-->
-
-      <footer>
-        <p>&copy; Company 2017</p>
-      </footer>
-
-    </div> <!-- /container -->
-
+    <div class="main-wrapper">
+      <%#= render partial: 'layouts/header'%>
+      <div class="container-fluid">
+        <%#= yield %>
+      </div>
+    </div>
+    <%#= render partial: 'layouts/footer'%> -->
+    <div id="wrapper_new">
+    <%= render :partial => "layouts/header"%> <!-- tb_check -->
+    <%#= render :partial => 'layouts/schema'%>
+    <div id="content_new">    
+     <div id="wrap">
+        <div class="container-fluid">
+            <%= yield %>
+         </div>
+     </div>
+    </div>
+    <div id="footer_new">
+    <%= render :partial => "layouts/footer" %> <!-- tb_check -->
+    <img src="https://s.amazon-adsystem.com/iui3?d=3p-hbg&ex-src=valuethisnow.com&ex-hargs=v%3D1.0%3Bc%3D6195181157857%3Bp%3DH" width=1 height=1 border=0>
+    </div>
   </body>
 </html>

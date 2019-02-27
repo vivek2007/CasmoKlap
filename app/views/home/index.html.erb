@@ -1,2 +1,1324 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!-- <body id="body" class="body-wrapper boxed-menu" > -->
+  <!-- <div class="main-wrapper"> -->
+    <!-- BANNER SECTION -->
+    <section class="clearfix homeBanner">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="banerInfo">
+              <h1>Your Service Expert in Kakinada</h1>
+              <p>Get instant access to reliable and affordable services</p>
+              <form class="form-inline" action="" method="">
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-btn selectdiv">
+                      <select class="btn">
+                        <option>Select Service</option>
+                        <option>Ahemdabad</option>
+                        <option>Hyderabadla</option>
+                      </select>
+                    </span>
+                    <input type="text" class="form-control">
+                    <div class="input-group-addon addon-right"> <button type="submit" class="btn btn-primary">Select Service</button></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- INTEREST SECTION -->
+    <section class="clearfix interestArea">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-2 col-xs-12">
+            <a href="category-grid-full.html" class="interestContent">
+              <%= image_tag "cleaning.png" %>
+              <!--<i class="icon-listy icon-tea-cup-1"></i>-->
+              <span>
+              PLUMBING 
+              </span>
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-12">
+            <a href="category-list-full.html" class="interestContent">
+            <%= image_tag "beauty.png" %>
+            <span>
+            CARPENTER 
+            </span>
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-12">
+            <a href="category-grid.html" class="interestContent">
+            <%= image_tag "wedding.png" %>
+            <span>
+            ELECTRITION 
+            </span>
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-12">
+            <a href="category-list-left.html" class="interestContent">
+            <%= image_tag "business.png" %>
+            <span>
+            BEAUTY & SPA
+            </span>
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-12">
+            <a href="category-grid-right.html" class="interestContent">
+            <%= image_tag "personnal.png" %>
+            <span>
+            PERSONAL & MORE
+            </span>
+            </a>
+          </div>
+          <div class="col-sm-2 col-xs-12">
+            <a href="category-list-right.html" class="interestContent">
+            <%= image_tag "library.png" %>
+            <span>
+            WEDDING & EVENTS
+            </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- THINGS SECTION -->
+    <section class="clearfix thingsArea">
+      <div class="container">
+        <div class="page-header text-left">
+          <h2>Recomended Services</h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="thubmnailSlider" class="carousel slide thumbnailCarousel">
+              <ol class="carousel-indicators">
+                <li data-target="#thubmnailSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="1"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="2"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="3"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="4"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="5"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="6"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="7"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item row active">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-4.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Saloon at Home</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-5.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Ac Service & Repair</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-8.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Packers & Movers</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-10.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Wedding Photographers</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3    col-sm-6 col-xs-12">
+                    <div class="thingsBox ">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-11.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#thubmnailSlider" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+              <a class="right carousel-control" href="#thubmnailSlider" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="page-header text-left">
+          <h2>Home Cleaning</h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="thubmnailSlider1" class="carousel slide thumbnailCarousel">
+              <ol class="carousel-indicators">
+                <li data-target="#thubmnailSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="1"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="2"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="3"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="4"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="5"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="6"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="7"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item row active">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-4.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Floor Cleaning</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-5.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Sofa Cleaning</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-8.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Bathroom Deep Cleaning</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-10.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Kitchen Deep Cleaning</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox ">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-11.jpg", :alt=> "Image things" %>                  
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#thubmnailSlider1" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+              <a class="right carousel-control" href="#thubmnailSlider1" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="page-header text-left">
+          <h2>Shifting Homes</h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="thubmnailSlider2" class="carousel slide thumbnailCarousel">
+              <ol class="carousel-indicators">
+                <li data-target="#thubmnailSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="1"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="2"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="3"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="4"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="5"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="6"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="7"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item row active">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-4.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Packers & Movers</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-5.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Wall Painting</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-8.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Pest Control</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-10.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Electrician</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox ">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-11.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#thubmnailSlider2" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+              <a class="right carousel-control" href="#thubmnailSlider2" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="page-header text-left">
+          <h2>Health &amp; Wellness</h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="thubmnailSlider3" class="carousel slide thumbnailCarousel">
+              <ol class="carousel-indicators">
+                <li data-target="#thubmnailSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="1"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="2"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="3"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="4"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="5"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="6"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="7"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item row active">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-4.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Yoga Trainer at Home</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-5.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Fitness Trainer at Home</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-8.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Dietician</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-10.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Physhiotherphy</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox ">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-11.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#thubmnailSlider3" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+              <a class="right carousel-control" href="#thubmnailSlider3" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="page-header text-left">
+          <h2>Repairs</h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="thubmnailSlider4" class="carousel slide thumbnailCarousel">
+              <ol class="carousel-indicators">
+                <li data-target="#thubmnailSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="1"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="2"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="3"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="4"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="5"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="6"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="7"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item row active">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-4.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://"> Refregirators </a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-5.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Washing Machines</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-8.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">TV & Air Conditioners</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-10.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Computers & Laptops</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox ">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-11.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#thubmnailSlider4" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+              <a class="right carousel-control" href="#thubmnailSlider4" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="page-header text-left">
+          <h2>Wedding services</h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="thubmnailSlider5" class="carousel slide thumbnailCarousel">
+              <ol class="carousel-indicators">
+                <li data-target="#thubmnailSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="1"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="2"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="3"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="4"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="5"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="6"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="7"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item row active">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-4.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Hair Styling & Makeup</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-5.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Wedding Photographer</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-8.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Prewedding Shoot</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-10.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Wedding Catarers</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox ">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-11.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#thubmnailSlider5" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+              <a class="right carousel-control" href="#thubmnailSlider5" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="page-header text-left">
+          <h2>Party and Event Services</h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="thubmnailSlider6" class="carousel slide thumbnailCarousel">
+              <ol class="carousel-indicators">
+                <li data-target="#thubmnailSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="1"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="2"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="3"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="4"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="5"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="6"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="7"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item row active">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-4.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Party Cleaners</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-5.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Party Catarores</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-8.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Event Photographer</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-10.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Hair Style  & Makeup</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox ">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-11.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#thubmnailSlider6" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+              <a class="right carousel-control" href="#thubmnailSlider6" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="page-header text-left">
+          <h2>Help For Your Business</h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="thubmnailSlider7" class="carousel slide thumbnailCarousel">
+              <ol class="carousel-indicators">
+                <li data-target="#thubmnailSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="1"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="2"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="3"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="4"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="5"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="6"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="7"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item row active">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-4.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Web Designers & Developers</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-5.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">CA for IT Filing</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-8.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Charted Accountant</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-10.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Banking</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox ">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-11.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#thubmnailSlider7" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+              <a class="right carousel-control" href="#thubmnailSlider7" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="page-header text-left">
+          <h2>Help For Your Business</h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="thubmnailSlider8" class="carousel slide thumbnailCarousel">
+              <ol class="carousel-indicators">
+                <li data-target="#thubmnailSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="1"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="2"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="3"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="4"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="5"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="6"></li>
+                <li data-target="#thubmnailSlider" data-slide-to="7"></li>
+              </ol>
+              <!-- Carousel items -->
+              <div class="carousel-inner">
+                <div class="item row active">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-4.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-5.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-8.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-10.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item row">
+                  <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="thingsBox ">
+                      <div class="thingsImage">
+                        <%= image_tag "things/things-11.jpg", :alt=> "Image things" %>
+                      </div>
+                      <div class="thingsCaption ">
+                        <ul class="list-inline captionItem">
+                          <li><a href="javascript://">Service Title</a></li>
+                          <li></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="left carousel-control" href="#thubmnailSlider8" data-slide="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+              <a class="right carousel-control" href="#thubmnailSlider8" data-slide="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ARTICLES SECTION-->
+    <section class="clearfix articlesArea">
+      <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <div class="thumbnail articleContent text-center">
+            <a href="blog-details.html">
+            <%= image_tag "articles/article-1.png", :alt=> "Image articles", :class=> "img-responsive" %>
+            </a>
+            <div class="caption">
+              <h4>Renovating your home ?</h4>
+              <p class="text-center">Get inspiration ideas from 1000+ projects on home renovation and design</p>
+              <div class="btnArea">
+                <a href="#" class="btn btn-primary btn-md">Browse ideas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <div class="thumbnail articleContent text-center">
+            <a href="blog-details.html">
+            <%= image_tag "articles/article-2.png", :alt=> "Image articles", :class=> "img-responsive" %>
+            </a>
+            <div class="caption">
+              <h4>Planning a Wedding?</h4>
+              <p>Browse 25,000+ wedding photos, bridal looks, makeup styles, wedding themes</p>
+              <div class="btnArea">
+                <a href="#" class="btn btn-primary">Browse ideas</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="testimonial-section">
+      <div class="container-fluid">
+        <div class="page-header text-center">
+          <h2>What Our Users Say <small>We collect reviews from our users so you can get an honest opinion of what <br> an experience with our website are really like!</small></h2>
+        </div>
+        <div class="row testimonial-slider owl-carousel">
+          <div class="testimonial-content">
+            <div class="testimonial-box">
+              <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas assumenda, quisquam mollitia sint veniam, placeat, temporibus reprehenderit nesciunt sunt unde asperiores neque at, est ut necessitatibus in expedita amet quia.</div>
+            </div>
+            <div class="testimonial-author">
+              <%= image_tag "recent-user-1.jpg", :alt=> "user-image" %>
+              <h5> Adam Smith <span>Culpa, recusandae.</span></h5>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-box">
+              <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas assumenda, quisquam mollitia sint veniam, placeat, temporibus reprehenderit nesciunt sunt unde asperiores neque at, est ut necessitatibus in expedita amet quia.</div>
+            </div>
+            <div class="testimonial-author">
+              <%= image_tag "recent-user-2.jpg", :alt=> "user-image" %>
+              <h5> Adam Smith <span>Culpa, recusandae.</span></h5>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-box">
+              <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas assumenda, quisquam mollitia sint veniam, placeat, temporibus reprehenderit nesciunt sunt unde asperiores neque at, est ut necessitatibus in expedita amet quia.</div>
+            </div>
+            <div class="testimonial-author">
+              <%= image_tag "recent-user-3.jpg", :alt=> "user-image" %>
+              <h5> Adam Smith <span>Culpa, recusandae.</span></h5>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-box">
+              <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas assumenda, quisquam mollitia sint veniam, placeat, temporibus reprehenderit nesciunt sunt unde asperiores neque at, est ut necessitatibus in expedita amet quia.</div>
+            </div>
+            <div class="testimonial-author">
+              <%= image_tag "recent-user-4.jpg", :alt=> "user-image" %>
+              <h5> Adam Smith <span>Culpa, recusandae.</span></h5>
+            </div>
+          </div>
+          <div class="testimonial-content">
+            <div class="testimonial-box">
+              <div class="testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas assumenda, quisquam mollitia sint veniam, placeat, temporibus reprehenderit nesciunt sunt unde asperiores neque at, est ut necessitatibus in expedita amet quia.</div>
+            </div>
+            <div class="testimonial-author">
+              <%= image_tag "recent-user-1.jpg", :alt=> "user-image" %>
+              <h5> Adam Smith <span>Culpa, recusandae.</span></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="started-bussiness">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="content">
+              <h2>Other categories in Kakinada</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="useLink">
+              <ul class="list-unstyled">
+                <li><a href="/">Free Water Purifier Check-Up</a></li>
+                <li><a href="/">Sceince Tutor</a></li>
+                <li><a href="/">Bathroom Renovation</a></li>
+                <li><a href="/">Home Cleaning Services</a></li>
+                <li><a href="/">Salon Spa Subscription</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="useLink">
+              <ul class="list-unstyled">
+                <li><a href="/">Yoga at Studio</a></li>
+                <li><a href="/">Logo Designers</a></li>
+                <li><a href="/">GST Registration & Migration Services</a></li>
+                <li><a href="/">Relocation Service</a></li>
+                <li><a href="/">Salon at Home for Women</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="useLink">
+              <ul class="list-unstyled">
+                <li><a href="/">Wedding Dresses</a></li>
+                <li><a href="/">Office Deep Cleaning</a></li>
+                <li><a href="/">Appliance Repair</a></li>
+                <li><a href="/">Chartered Accountant</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- WORKS SECTION -->
+    <section class="clearfix worksArea">
+      <div class="container">
+        <div class="page-header text-center">
+          <h2>Expand your service business with OyeAbhi</h2>
+          <p>Join a community of 75,000+ professionals who have successfully grown their business with OyeAbhi</p>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-xs-12">
+            <div class="thumbnail text-center worksContent">
+              <%= image_tag "works/works-1.png", :alt=> "Image works" %>
+              <div class="caption">
+                <a href="#">
+                  <h3>Vivek</h3>
+                </a>
+                <span>Wedding Photographer</span>
+                <hr>
+                <p>Hired #Vivek Wedding Photograper, great resource and super impress, Thanks..</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-12">
+            <div class="thumbnail text-center worksContent">
+              <%= image_tag "works/works-2.png", :alt=> "Image works" %>
+              <div class="caption">
+                <a href="#">
+                  <h3>Sonu</h3>
+                </a>
+                <span>Packers & Movers</span>
+                <hr>
+                <p>Hired #Sonu, Packers and Movers, super service, clean and near handling throught, effordable price, Thanks..</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 col-xs-12">
+            <div class="thumbnail text-center worksContent">
+              <%= image_tag "works/works-3.png", :alt=> "Image works" %>
+              <div class="caption">
+                <a href="#">
+                  <h3>Prasidd</h3>
+                </a>
+                <span>Charted Accountant</span>
+                <hr>
+                <p>Fixed an appointment with #Prasidd, Charted Accountant, Detailing was sorted problems professionally, friendly nature, Thanks.. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="intro" class="intro">
+      <div class="intro-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <div class="wow fadeInDown animated">
+                <%= image_tag "iphone.png", :class=>"img-responsive", :alt=>"", :style=>"margin-top: 150px;" %>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 slogan">
+              <div class="wow fadeInUp animated">
+                <h2>Download the App</h2>
+                <p>
+                  Choose the book from 100+ services track them on the go with the OyeAbhi App
+                </p>
+              </div>
+              <div class="well">
+                <form action="#">
+                  <div class="input-group">
+                    <input class="btn btn-lg" name="email" id="app-email" type="email" placeholder="Your Email" required>
+                    <button class="btn btn-info btn-lg" type="submit">Text App Link</button>
+                  </div>
+                </form>
+              </div>
+              <div class="buttons">
+                <a href="#" class="btn btn-success btn-lg" data-wow-duration="2s"><i class="fa fa-android fa-2x"></i> Download<br> <small>Android version 1.4</small></a>
+                <a href="#" class="btn btn-info btn-lg fadeInRight animated"><i class="fa fa-apple fa-2x"></i> Download <br> <small>iOs version 1.4</small></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CALL TO ACTION SECTION -->
+    <section class="clearfix callAction">
+      <div class="container container-brdr">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-1 col-sm-7 col-xs-12">
+            <div class="callInfo text-right">
+              <h4>Are you a professional looking to grow your service business?</h4>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-5 col-xs-12 text-left">
+            <div class="btnArea">
+              <a href="sign-up.html" class="btn btn-primary btn-block">Join Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CALL TO ACTION SECTION -->
+    <section class="clearfix callAction callAction-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="callInfo">
+              <%= image_tag "quality.png", :class=>"pull-left" %>
+              <h4>High Quality &amp; Trusted Professionals</h4>
+              <p>We provide only verified, background checked and high quality professionals</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="callInfo">
+              <%= image_tag "match.png", :class=>"pull-left" %>
+              <h4>Matched to Your Needs</h4>
+              <p>We match you with the right professionals with the right budget</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="callInfo">
+              <%= image_tag "hassle-free.png", :class=>"pull-left" %>
+              <h4>Hassle Free Service Delivery</h4>
+              <p>Super convenient, guaranteed service from booking to delivery</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- COUNT UP SECTION -->
+    <section class="clearfix countUpSection">
+      <div class="container">
+      <div class="page-header text-center">
+        <div class="row">
+          <div class="col-sm-3 col-xs-12">
+            <div class="text-center countItem">
+              <div class="counter">140</div>
+              <div class="counterInfo bg-color-1">LIVE SERVICES</div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-12">
+            <div class="text-center countItem">
+              <div class="counter">120</div>
+              <div class="counterInfo bg-color-2">CUSTOMERS SERVED</div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-12">
+            <div class="text-center countItem">
+              <div class="counter">180</div>
+              <div class="counterInfo bg-color-3">VERIFIED EXPERTS</div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-12">
+            <div class="text-center countItem">
+              <div class="counter">220</div>
+              <div class="counterInfo bg-color-4">AVERGAE RATING</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- </div> -->
+  <!-- LOGIN  MODAL -->
+  <div id="loginModal" tabindex="-1" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Log In to your Account</h4>
+        </div>
+        <div class="modal-body">
+          <form class="loginForm">
+            <div class="form-group">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <i class="fa fa-lock" aria-hidden="true"></i>
+              <input type="password" class="form-control" id="pwd" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">Log In</button>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox"> Remember me</label>
+              <a href="#" class="pull-right link">Fogot Password?</a>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p>Don’t have an Account? <a href="#" class="link">Sign up</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position: absolute; z-index: -10000; top: 0px; left: 0px; right: 0px; height: 8309px;"></div>
+<!-- </body> -->
+
+<style type="text/css">
+  .homeBanner {
+    background-image:url(<%= image_url "banner/banner1.jpg"%>);
+  }
+  .owl-stage .owl-item {
+    width: 1147px !important;
+    margin-right: 248px;
+    /*float: inherit;*/
+  }
+</style>

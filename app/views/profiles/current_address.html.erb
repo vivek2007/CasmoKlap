@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-10">
+    <%= form_for @profile, :url => wizard_path, :method => :put, :html => { :multipart => true } do |f| %>
+      <div class="form-group">
+        <label for="lane1">Lane1</label>
+        <%= f.text_field :lane1, id: "lane1", :class => "form-control", :required => true %>
+      </div>
+      <div class="form-group">
+        <label for="lane2">Lane1</label>
+        <%= f.text_field :lan2, id: "lane2", :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <label for="colony">Colony</label>
+        <%= f.text_field :colony, id: "colony", :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <%= f.text_field :city, id: "city", :class => "form-control", :required => true %>
+      </div>
+      <div class="form-group">
+        <label for="state">State</label>
+        <%= f.text_field :state, id: "state", :class => "form-control", :required => true %>
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <%= f.text_field :country, id: "country", :class => "form-control", :required => true %>
+      </div>
+      <%= f.submit :class => "btn btn-success pull-right identity-proof-submit"%>
+    <% end %>
+  </div>
+</div>
+<style type="text/css">
+  form {
+    width: 250px;
+    margin: 123px auto;
+}
+.identity-proof-submit{
+  margin-top: 50px; 
+}
+
+</style>

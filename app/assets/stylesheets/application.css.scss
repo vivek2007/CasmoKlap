@@ -1,0 +1,233 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require jquery-ui.min
+ *= require bootstrap_and_overrides
+ *= require font-awesome.min
+ *= require listyicons/style
+ *= require datepicker.min
+ *= require select_option1
+ *= require owl.carousel
+ *= require jquery.fancybox.min
+ *= require animate
+ *= require style
+ *= require default
+ *= require_self
+ */
+
+
+.form-group .file{
+  visibility: visible !important;
+  position: unset !important;
+}
+
+.file {
+  visibility: visible !important;
+  position: unset !important;
+  
+}
+
+@font-face {
+	font-family: 'fontawesome';
+	src: url('fontawesome-webfont.eot') format('truetype');
+	src: url('fontawesome-webfont.woff') format('truetype');
+	src: url('fontawesome-webfont.woff2') format('truetype');
+}
+
+.main {
+	padding: 50px 0; 
+}
+
+.wrap
+{
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+p.form-title
+{
+  font-family: 'Open Sans' , sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 5%;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+
+
+form.login input[type="email"], form.login input[type="password"], form.signup input[type="email"], form.signup input[type="password"], form.signup input[type="password_confirmation"]
+{
+  width: 100%;
+  margin: 0;
+  padding: 5px 10px;
+  background: 0;
+  border: 0;
+  border-bottom: 1px solid #FFFFFF;
+  outline: 0;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  outline: 0;
+}
+
+form.login input[type="submit"], form.signup input[type="submit"]
+{
+  width: 100%;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 16px;
+  outline: 0;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+form.login input[type="submit"]:hover, form.signup input[type="submit"]:hover
+{
+  transition: background-color 0.5s ease;
+}
+
+form.login .remember-forgot
+{
+  float: left;
+  width: 100%;
+  margin: 10px 0 0 0;
+}
+form.login .forgot-pass-content
+{
+  min-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+form.login label, form.login a, form.signup label, form.signup a
+{
+  font-size: 12px;
+  font-weight: 400;
+
+}
+
+form.login a, form.signup a
+{
+  transition: color 0.5s ease;
+}
+
+form.login a:hover, form.signup a:hover
+{
+  color: #2ecc71;
+}
+
+.pr-wrap
+{
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: none;
+}
+
+.show-pass-reset
+{
+  display: block !important;
+}
+
+.pass-reset
+{
+  margin: 0 auto;
+  width: 250px;
+  position: relative;
+  margin-top: 22%;
+  z-index: 999;
+  background: #FFFFFF;
+  padding: 20px 15px;
+}
+
+.pass-reset label
+{
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.pass-reset input[type="email"]
+{
+  width: 100%;
+  margin: 5px 0 0 0;
+  padding: 5px 10px;
+  background: 0;
+  border: 0;
+  border-bottom: 1px solid #000000;
+  outline: 0;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  color: #000000;
+  outline: 0;
+}
+
+.pass-reset input[type="submit"]
+{
+  width: 100%;
+  border: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 10px;
+  outline: 0;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.pass-reset input[type="submit"]:hover
+{
+  transition: background-color 0.5s ease;
+}
+
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+#wrapper_new {
+  min-height:100%;
+  position:relative;
+}
+#header_new {
+  background:#ededed;
+  padding:10px;
+}
+#content_new {
+  padding-bottom:155px; /* Height of the footer element */
+}
+#footer_new {
+  width:100%;
+  height:155px;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+#user_category_id{
+  height: 40px;
+}

@@ -5,6 +5,7 @@
 /tmp/*
 #/config/application.yml
 public/uploads
+public/assets
 
 .routes.txt.swp
 # Ignore application configuration

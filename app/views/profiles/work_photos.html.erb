@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-10">
+    <%= form_for @profile, :url => wizard_path, :method => :put, :html => { :multipart => true } do |f| %>
+        <div class="form-group">
+          <label for="work_photo_avatar">Work photos</label>
+          <%= f.nested_fields_for :work_photos do |work_photo| %>
+          <div class="form-group">
+            <%= work_photo.file_field "photo_file", :class=> "form-control", id: "work_photo_avatar", :required => true %>
+          </div>
+            <%= work_photo.remove_nested_fields_link do %>
+              <span>Remove</span>
+            <% end %>
+          <% end %>
+          <%= f.add_nested_fields_link :work_photos  do %>
+            <span>Add more work photo</span>
+          <% end %>
+        </div>
+      <%= f.submit :class => "btn btn-success pull-right identity-proof-submit"%>
+    <% end %>
+  </div>
+</div>
+<style type="text/css">
+  form {
+    width: 250px;
+    margin: 123px auto;
+}
+.identity-proof-submit{
+  margin-top: 50px; 
+}
+
+</style>
+<script type="text/javascript">
+  $(document).ready(function(){    
+    $('.add_nested_fields_link').trigger('click', "")
+  })
+
+</script>

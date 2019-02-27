@@ -11,12 +11,20 @@ gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'pg'
+#gem 'mysql2', '~> 0.4.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
+gem 'jquery-rails'
+gem "twitter-bootstrap-rails"
+group :assets do
+  gem 'therubyracer'
+end
+
+gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git', branch: 'master' 
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -32,6 +40,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem "twitter-bootstrap-rails"
+gem 'owlcarousel-rails'
+gem "rolify"
+#gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'carrierwave'
+gem 'wicked'
+gem "nested_form_fields"
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -42,6 +57,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem "capistrano"
+  gem 'capistrano-rails'
 end
 
 group :development do
@@ -55,8 +72,5 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'haml'
-gem 'simple_form'
 
 gem 'devise'

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Leads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Sub category</th>
+      <th>Sub package</th>
+      <th>User</th>
+      <th>Employee</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @leads.each do |lead| %>
+      <tr>
+        <td><%= lead.name %></td>
+        <td><%= lead.sub_category_id %></td>
+        <td><%= lead.sub_package_id %></td>
+        <td><%= lead.user_id %></td>
+        <td><%= lead.employee_id %></td>
+        <td><%= lead.status %></td>
+        <td><%= link_to 'Show', lead %></td>
+        <td><%= link_to 'Edit', edit_lead_path(lead) %></td>
+        <td><%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lead', new_lead_path %>

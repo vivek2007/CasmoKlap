@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-10">
+    <%= form_for @profile, :url => wizard_path, :method => :put, :html => { :multipart => true } do |f| %>
+        <div class="form-group">
+          <label for="qualification">Award & Certificate</label>
+          <%= f.nested_fields_for :certificates do |certificate| %>
+          <div class="form-group">
+            <%= certificate.file_field "certificate_avatar", :class=> "form-control", id: "certificate_avatar" %>
+          </div>
+            <%= certificate.remove_nested_fields_link do %>
+              <span>Remove</span>
+            <% end %>
+          <% end %>
+          <%= f.add_nested_fields_link :certificates  do %>
+            <span>Add more certificate</span>
+          <% end %>
+        </div>
+      <%= f.submit :class => "btn btn-success pull-right identity-proof-submit"%>
+    <% end %>
+  </div>
+</div>
+<style type="text/css">
+  form {
+    width: 250px;
+    margin: 123px auto;
+}
+.identity-proof-submit{
+  margin-top: 50px; 
+}
+
+</style>
+<script type="text/javascript">
+  $(document).ready(function(){    
+    $('.add_nested_fields_link').trigger('click', "")
+  })
+
+</script>

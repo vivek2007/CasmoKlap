@@ -1,0 +1,95 @@
+<div class="row">
+  <div class="col-md-10">
+    <%= form_for @profile, :url => wizard_path, :method => :put, :html => { :multipart => true } do |f| %>
+        <div class="form-group">
+          <label for="qualification">Qualification</label>
+          <%= f.nested_fields_for :qualifications do |qualification| %>
+          <div class="form-group">
+            <label for="qualification_name">Name</label>
+            <%= qualification.text_field :name, :class=> "form-control", id: "qualification_name", :required => true %>
+          </div>
+            <%= qualification.remove_nested_fields_link do %>
+              <span>Remove</span>
+            <% end %>
+          <% end %>
+          <%= f.add_nested_fields_link :qualifications  do %>
+            <span>Add more qualification</span>
+          <% end %>
+        </div>
+        <div class="form-group">
+          <label for="qualification">Customer References</label>
+          <%= f.nested_fields_for :references do |reference| %>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <%= reference.text_field :name, :class=> "form-control", id: "name", :required => true %>
+          </div>
+          <div class="form-group">
+            <label for="contact">Contact</label>
+            <%= reference.text_field :contact, :class=> "form-control", id: "contact", :required => true %>
+          </div>
+            <%= reference.remove_nested_fields_link do %>
+              <span>Remove</span>
+            <% end %>
+          <% end %>
+          <%= f.add_nested_fields_link :references  do %>
+            <span>Add more reference</span>
+          <% end %>
+        </div>
+        <div class="form-group">
+          <label for="experiance">Experiance</label>
+          <%#= f.text_field :experiance, id: "experiance", :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <label for="alternate_contact">Alternate Contact</label>
+          <%= f.text_field "alternate_contact", id: "alternate_contact", :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <label for="online_presence">Online Presence</label>
+          <%= f.text_field "online_presence", id: "online_presence", :class => "form-control", :required => true %>
+        </div>
+        <div class="form-group">
+          <label for="specialization">Specialization</label>
+          <%= f.text_field "specialization", id: "specialization", :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <label for="localities">Localities</label>
+          <%= f.text_field "localities", id: "localities", :class => "form-control", :required => true %>
+        </div>
+        <div class="form-group">
+          <label for="introduction">Introduction</label>
+          <%= f.text_area "introduction", id: "introduction", :class => "form-control", :required => true %>
+        </div>
+        <div class="form-group">
+          <label for="degree_available">Degree Available</label>
+          <%= f.check_box "degree_available", id: "degree_available"%>
+        </div>
+        <div class="form-group">
+          <label for="service_location">Service Location</label>
+          <%= f.text_field "service_location", id: "service_location", :class => "form-control", :required => true %>
+        </div>
+      <%= f.submit :class => "btn btn-success pull-right identity-proof-submit"%>
+    <% end %>
+  </div>
+</div>
+<style type="text/css">
+  form {
+    width: 250px;
+    margin: 123px auto;
+}
+.file{
+  visibility: visible !important;
+}
+.profile_id_back_image_file_name{
+  margin-top: 100px;
+} 
+.identity-proof-submit{
+  margin-top: 50px; 
+}
+
+</style>
+<script type="text/javascript">
+  $(document).ready(function(){    
+    $('.add_nested_fields_link').trigger('click', "")
+  })
+
+</script>
