@@ -10,9 +10,20 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery 
+//= require jquery-3.3.1.min 
 //= require jquery_ujs
 //= require turbolinks
-//= require twitter/bootstrap
-//= require nested_form_fields
-//= require_tree .
+//= require popper.min
+//= require bootstrap
+//= require owl.carousel.min
+//= require jquery.waypoints.min
+//= require jquery.counterup.min
+//= require jquery
+//= require_self
+
+$(document).ready(function(){
+	$('.counter').counterUp({
+	    delay: 10,
+	    time: 1000
+	});
+})

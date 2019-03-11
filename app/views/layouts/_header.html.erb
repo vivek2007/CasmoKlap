@@ -1,49 +1,112 @@
-<header id="pageTop" class="header">
-  <!-- TOP INFO BAR -->
-  <div class="nav-wrapper">
-    <!-- NAVBAR -->
-    <nav id="menuBar" class="navbar navbar-default transparent-navbar " role="navigation">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">
-          <%= image_tag "logo.png"%>
-          </a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <% unless user_signed_in? %>
-              <li class=""><a href="blog.html">Blog </a></li>
-              <li class=""><%= link_to "Login/ Sign Up", new_user_session_path %></li>
-              <li><%= link_to "Become A Professional", "/users/sign_up?professional=professional", :class=> "btn btn-default navbar-btn" %></li>
-            <% else %>
-                <li class="pull-right">
-                  <%= (current_user.full_name || current_user.email) %>
+<nav class="navbar navbar-header navbar-expand-lg navbar-dark bg-dark nav-bgcolor">
+    <div class="container">
+        <a class="navbar-brand" href="#"><span class="dblue">Oye</span>Abhi</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">BLOG</a>
                 </li>
-                <li class="">
-                  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">LOGIN/SIGN UP</a>
                 </li>
-                <% unless current_user.is_customer? %>
-                  <li class="pull-right">
-                    <%= link_to('Create Profile', profiles_path ) %>
-                  </li>
-                <% end %>
-            <% end %>
-          </ul>
-        </div>
-    </nav>
-  </div>
-</header>
+                <li class="nav-item">
+                    <a class="nav-link border border-color" href="#">BECOME A PROFESSIONAL</a>
+                </li>
 
 
-<style type="text/css">
-  .navbar-brand{
-    margin-left: 215px;    
-  }
-</style>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+<section class="banner">
+    <div class="banner-content text-center">
+
+        <h1>Your Service Expert In Kakinada</h1>
+        <p>Get instant access to reliable and affordable services</p>
+        <form action="" class="form-inline justify-content-center banner-form">
+
+            <div class="form-group ">
+                <span class="input-group-btn menu-icon">
+                    <select class="select btn btn-bg-white">
+                        <option value="">Select Service</option>
+                        <option value="Kakinada">Kakinada</option>
+                        <option value="Vishakapatnam">Vishakapatnam</option>
+                        <option value="Rajahmundry">Rajahmundry</option>
+                        <option value="Vijaywada">Vijaywada</option>
+                        <option value="Guntur">Guntur</option>
+                        <option value="Amaravathi">Amaravathi</option>
+                        <option value="Thirupathi">Thirupathi</option>
+                        <option value="Nellore">Nellore</option>
+
+                    </select>
+                </span>
+            </div>
+            <div class="form-group text-box">
+                <input type="text" class="form-control input-group-lg text-box">
+            </div>
+            <div class="form-group btn btn-bg-white form-group-btn">
+                <button class=" btn-gradient btn banner-btn">Select Service
+                </button>
+            </div>
+        </form>
+
+    </div>
+
+</section>
+
+<!--services section-->
+<section class="services">
+
+    <div class="container ">
+        <div class="row text-center ">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//beauty.png" alt="">
+                    <p class="pt-2">Beauty & Spa</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//business.png" alt="">
+                    <p class="pt-2">Business</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//cleaning.png" alt="">
+                    <p class="pt-2">Cleaning</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//library.png" alt="">
+                    <p class="pt-2">Health & Wellness</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//personnal.png" alt="">
+                    <p class="pt-2">Personal & More</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//wedding.png" alt="">
+                    <p class="pt-2">Wedding & Events</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</section>
+<!--multiple image sliders-->
