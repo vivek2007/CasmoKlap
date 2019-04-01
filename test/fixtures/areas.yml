@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  description: 
+  short_name: 
+  address1: 
+  address2: 
+  address3: 
+  pincode: 
+  landmark: 
+  city_id: 1
+
+two:
+  name: 
+  description: 
+  short_name: 
+  address1: 
+  address2: 
+  address3: 
+  pincode: 
+  landmark: 
+  city_id: 1
