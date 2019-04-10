@@ -12,6 +12,12 @@ class CategoriesController < ApplicationController
   def show
   end
 
+  def search
+    binding.pry
+    @categories = Category.search(search_params)
+    @city = params[:city]
+  end
+
   # GET /categories/new
   def new
     @category = Category.new
@@ -70,5 +76,9 @@ class CategoriesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
       params.require(:category).permit(:name, :desc)
+    end
+
+    def search_params
+      params.require(:category).permit(:name)
     end
 end

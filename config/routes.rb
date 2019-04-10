@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   resources :sub_packages
   resources :packages
   resources :sub_categories
-  resources :categories
+  resources :categories do 
+    collection do 
+      post 'search'
+    end
+  end
   resources :profiles
   get 'home/index'
   devise_for :users, :controllers => { :registrations => "registrations"}

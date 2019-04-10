@@ -59,6 +59,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem "capistrano"
   gem 'capistrano-rails'
+  gem 'pry'
+  gem 'rb-readline'
 end
 
 group :development do

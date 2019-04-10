@@ -27,15 +27,15 @@
 
 <section class="banner">
     <div class="banner-content text-center">
-
         <h1>Your Service Expert In Kakinada</h1>
         <p>Get instant access to reliable and affordable services</p>
-        <form action="" class="form-inline justify-content-center banner-form">
-
+        <%= simple_form_for Category.new , url: "/categories/search", html: { class: "form-inline justify-content-center banner-form", multipart: true}, method: "POST" do |f| %>
             <div class="form-group ">
-                <span class="input-group-btn menu-icon">
-                    <select class="select btn btn-bg-white">
-                        <option value="">Select Service</option>
+                <div class="input-group-btn menu-icon">
+                  <%= f.input :name , collection: [["kakinda", "Kakinda"], ["rajahmundry","Rajahmundry"]], input_html: {class: "select btn btn-bg-white"}, :prompt => "Select City", label: false %>
+
+<!--                     <select class="select btn btn-bg-white" name="city">
+                        <option value="">Select City</option>
                         <option value="Kakinada">Kakinada</option>
                         <option value="Vishakapatnam">Vishakapatnam</option>
                         <option value="Rajahmundry">Rajahmundry</option>
@@ -44,18 +44,17 @@
                         <option value="Amaravathi">Amaravathi</option>
                         <option value="Thirupathi">Thirupathi</option>
                         <option value="Nellore">Nellore</option>
-
-                    </select>
-                </span>
+                    </select> -->
+                </div >
             </div>
             <div class="form-group text-box">
-                <input type="text" class="form-control input-group-lg text-box">
+                <input type="text" class="form-control input-group-lg text-box" name="category">
             </div>
             <div class="form-group btn btn-bg-white form-group-btn">
-                <button class=" btn-gradient btn banner-btn">Select Service
+                <button type="submit" class=" btn-gradient btn banner-btn">Submit
                 </button>
             </div>
-        </form>
+        <% end %>
 
     </div>
 
