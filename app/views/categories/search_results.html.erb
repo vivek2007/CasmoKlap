@@ -1,0 +1,19 @@
+<h1>Search Results </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= category.desc %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

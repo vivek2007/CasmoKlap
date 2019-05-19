@@ -29,26 +29,26 @@
     <div class="banner-content text-center">
         <h1>Your Service Expert In Kakinada</h1>
         <p>Get instant access to reliable and affordable services</p>
-        <%= simple_form_for Category.new , url: "/categories/search", html: { class: "form-inline justify-content-center banner-form", multipart: true}, method: "POST" do |f| %>
+        <%= simple_form_for :categories , url: "/categories/search", html: { class: "form-inline justify-content-center banner-form", multipart: true}, method: "POST" do |f| %>
             <div class="form-group ">
                 <div class="input-group-btn menu-icon">
-                  <%= f.input :name , collection: [["kakinda", "Kakinda"], ["rajahmundry","Rajahmundry"]], input_html: {class: "select btn btn-bg-white"}, :prompt => "Select City", label: false %>
+                  <%#= f.input :city , collection: [["kakinda", "Kakinda"], ["rajahmundry","Rajahmundry"]], input_html: {class: "select btn btn-bg-white"}, :prompt => "Select City", label: false %>
 
-<!--                     <select class="select btn btn-bg-white" name="city">
+                    <select class="select btn btn-bg-white" name="city">
                         <option value="">Select City</option>
                         <option value="Kakinada">Kakinada</option>
                         <option value="Vishakapatnam">Vishakapatnam</option>
                         <option value="Rajahmundry">Rajahmundry</option>
-                        <option value="Vijaywada">Vijaywada</option>
+         <!--                <option value="Vijaywada">Vijaywada</option>
                         <option value="Guntur">Guntur</option>
                         <option value="Amaravathi">Amaravathi</option>
                         <option value="Thirupathi">Thirupathi</option>
-                        <option value="Nellore">Nellore</option>
-                    </select> -->
+                        <option value="Nellore">Nellore</option> -->
+                    </select>
                 </div >
             </div>
             <div class="form-group text-box">
-                <input type="text" class="form-control input-group-lg text-box" name="category">
+              <%= f.input :name , input_html: {class: 'form-control input-group-lg text-box'}, label: false %>
             </div>
             <div class="form-group btn btn-bg-white form-group-btn">
                 <button type="submit" class=" btn-gradient btn banner-btn">Submit

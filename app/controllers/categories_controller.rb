@@ -13,9 +13,10 @@ class CategoriesController < ApplicationController
   end
 
   def search
-    binding.pry
     @categories = Category.search(search_params)
-    @city = params[:city]
+    @city = search_params[:city]
+
+    render :search_results
   end
 
   # GET /categories/new
@@ -79,6 +80,6 @@ class CategoriesController < ApplicationController
     end
 
     def search_params
-      params.require(:category).permit(:name)
+      params.require(:categories).permit(:name)
     end
 end
