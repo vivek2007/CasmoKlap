@@ -9,7 +9,11 @@
                 </div >
             </div>
             <div class="form-group text-box">
-              <%= f.input :name , collection: Category.all.map { |c| [c.name, c.id] }, input_html: {class: 'form-control input-group-lg text-box'}, label: false %>
+              <%#= f.input :name , collection: SubCategory.all.map { |c| [c.name, c.id] }, input_html: {class: 'form-control input-group-lg text-box', id: "item_select2"}, label: false %>
+              <div class = "form-control input-group-lg text-box">
+              <%= f.input_field :name, data: { placeholder: "Categories", saved: "", url: autocomplete_categories_path}, input_html:  { class: "form-control input-group-lg text-box" }
+              %>
+              </div>
             </div>
             <div class="form-group btn btn-bg-white form-group-btn">
                 <button type="submit" class=" btn-gradient btn banner-btn">Submit
@@ -796,3 +800,24 @@
 
 
     </section>
+<script type="text/javascript">
+  $("#categories_name").select2({
+    theme: "bootstrap",
+    ajax: {data: function(term, page) {
+            return {
+                term: term,
+                page: page
+            };
+        },
+      url: $("#categories_name").data("url"),
+      dataType: "json",
+      results: function(data, page) {
+        return { 
+          results: $.map( data, function(person, i) { 
+            return { id: person.id, text: person.name } 
+          } )
+        }
+      }
+    }
+});
+</script>

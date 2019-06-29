@@ -13,10 +13,33 @@ class CategoriesController < ApplicationController
   end
 
   def search
-    category = Category.where(id: params[:categories][:name]).last.id if params[:categories][:name].present?
-    city = City.where(id: params[:categories][:city]).last.id if params[:categories][:city].present?
-    @users = User.includes(:profile).references(:profile).where(city_id: city, category_id: category)
+    @results ||= []
+    session[:categories] = params[:categories]
+    query = make_query(params[:categories][:name], params[:categories][:city])
+    @results = ActiveRecord::Base.connection.select_all(query).entries if params[:categories][:name].present? && params[:categories][:city].present?
     render :search_results
+  end
+
+  def autocomplete_categories
+    @sub_categories = SubCategory.select("id, name").where("name LIKE ?", "#{params[:term]}%").order(:name).limit(10)
+    respond_to do |format|
+      format.json { render json: @sub_categories , :only => [:id, :name] }
+    end    
+  end
+
+  def find_near_area
+    categories = session[:categories]
+    query = make_query(categories["name"], categories["city"], params[:area])
+    @results = ActiveRecord::Base.connection.select_all(query).entries
+    render :search_results
+  end
+
+  def make_query cat_name, city, area = nil
+    if area.present?
+      "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, profiles.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.id = #{cat_name} or sub_categories.category_id = #{cat_name}) and users.city_id = #{city} and users.area_id = #{area}"
+    else
+      "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, profiles.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.id = #{cat_name} or sub_categories.category_id = #{cat_name}) and users.city_id = #{city}"
+    end
   end
 
   # GET /categories/new

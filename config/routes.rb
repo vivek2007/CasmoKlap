@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   get 'home/index'
   devise_for :users, :controllers => { :registrations => "registrations", sessions: "sessions"}
   #devise_for :users, :controllers => {sessions: 'sessions'}
+  get "autocomplete_categories" => "categories#autocomplete_categories", as: "autocomplete_categories"
+  get "find_near_area" => "categories#find_near_area", as: "find_near_area"
   root 'home#index'
 end

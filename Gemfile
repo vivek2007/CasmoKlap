@@ -46,6 +46,7 @@ gem "rolify"
 gem 'carrierwave'
 gem 'wicked'
 gem "nested_form_fields"
+gem 'select2-rails'
 
 
 # Use Capistrano for deployment

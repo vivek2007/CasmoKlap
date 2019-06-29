@@ -6,7 +6,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   rolify
   has_one :profile, dependent: :destroy
-  belongs_to :category, optional: true
+  #belongs_to :category, optional: true
+  belongs_to :sub_category, optional: true
+  belongs_to :area, optional: true
   validates_acceptance_of :terms
   attr_accessor :terms
 
