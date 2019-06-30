@@ -4,14 +4,14 @@
         <p>Get instant access to reliable and affordable services</p>
         <%= simple_form_for :categories , url: "/categories/search", html: { class: "form-inline justify-content-center banner-form", multipart: true}, method: "GET" do |f| %>
             <div class="form-group ">
-                <div class="input-group-btn menu-icon ">
-                  <%= f.input :city , collection: City.all.map { |c| [c.name, c.id] }, input_html: {class: "select btn btn-bg-white text-box"}, :prompt => "Select City", label: false %>
+                <div class="input-group-btn menu-icon">
+                  <%= f.input :city , collection: City.all.map { |c| [c.name, c.id] }, input_html: {class: "select btn btn-bg-white text-box "}, :prompt => "Select City", label: false %>
                 </div >
             </div>
             <div class="form-group text-box">
               <%#= f.input :name , collection: SubCategory.all.map { |c| [c.name, c.id] }, input_html: {class: 'form-control input-group-lg text-box', id: "item_select2"}, label: false %>
               <div class = "form-control input-group-lg text-box">
-              <%= f.input_field :name, data: { placeholder: "Categories", saved: "", url: autocomplete_categories_path}, input_html:  { class: "form-control input-group-lg text-box" }
+              <%= f.input_field :name, data: { placeholder: "Categories", saved: "", url: autocomplete_categories_path}
               %>
               </div>
             </div>
@@ -803,6 +803,8 @@
 <script type="text/javascript">
   $("#categories_name").select2({
     theme: "bootstrap",
+    width: "200px",
+    customClass: "Myselectbox",
     ajax: {data: function(term, page) {
             return {
                 term: term,

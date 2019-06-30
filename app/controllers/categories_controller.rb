@@ -21,9 +21,19 @@ class CategoriesController < ApplicationController
   end
 
   def autocomplete_categories
-    @sub_categories = SubCategory.select("id, name").where("name LIKE ?", "#{params[:term]}%").order(:name).limit(10)
+    # @sub_categories = Category.joins(:sub_categories).select("id, name").where("categories.name LIKE ? or sub_categories.name LIKE ?", "#{params[:term]}%", "#{params[:term]}%").order(:name).limit(10)
+    
+
+    # categories = Category.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).select("id, name")
+    # sub_categories = SubCategory.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).select("id, name")
+    # results = (categories + sub_categories).flatten
+    # debugger
+    
+    categories = Category.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).pluck("id, name")
+    sub_categories = SubCategory.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).pluck("id, name")
+    results = (categories + sub_categories).map{|s| {"id" => s[0], "name" => s[1].titleize}}
     respond_to do |format|
-      format.json { render json: @sub_categories , :only => [:id, :name] }
+      format.json { render json: results}
     end    
   end
 
@@ -36,9 +46,9 @@ class CategoriesController < ApplicationController
 
   def make_query cat_name, city, area = nil
     if area.present?
-      "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, profiles.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.id = #{cat_name} or sub_categories.category_id = #{cat_name}) and users.city_id = #{city} and users.area_id = #{area}"
+      "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, profiles.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.category_id = #{cat_name} or sub_categories.id = #{cat_name}) and users.city_id = #{city} and users.area_id = #{area}"
     else
-      "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, profiles.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.id = #{cat_name} or sub_categories.category_id = #{cat_name}) and users.city_id = #{city}"
+      "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, profiles.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.category_id = #{cat_name} or sub_categories.id = #{cat_name}) and users.city_id = #{city}"
     end
   end
 
