@@ -3,7 +3,7 @@ class Category < ApplicationRecord
 
 	# has_many :sub_categories, :dependent => :destroy
 	# has_many :users
-  has_many :subcategories, :dependent => :destroy
+  has_many :sub_categories, :dependent => :destroy
   has_many :users, :through => :subcategory
 
 	def self.search(options)
