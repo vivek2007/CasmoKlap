@@ -66,11 +66,11 @@
                 <% end %></br></br>
                 <%= form_tag find_near_area_path, method: "GET" do %>
                   <div>
-                    <%= label_tag "Find near area"%>
-                    <%= select_tag "area", options_from_collection_for_select(Area.all, "id", "name")%>
+                    <h5>Find near area</h5>
+                    <%= select_tag "area", options_from_collection_for_select(Area.all, "id", "name"), class: "custom-select"%>
                   </div>
                   <div>
-                    <%= button_tag "Find"%>
+                    <%= button_tag "Find", class: "btn btn-next my-3"%>
                   </div>
                 <% end %>
               </div>

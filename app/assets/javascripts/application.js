@@ -19,7 +19,7 @@
 //= require jquery.waypoints.min
 //= require jquery.counterup.min
 //= require jquery
-//= require select2
+//= require jquery-ui
 //= require_self
 
 $(document).ready(function(){

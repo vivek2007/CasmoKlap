@@ -15,23 +15,22 @@ class CategoriesController < ApplicationController
   def search
     @results ||= []
     session[:categories] = params[:categories]
-    query = make_query(params[:categories][:name], params[:categories][:city])
+    category = Category.where('lower(name) = ?', "#{params[:categories][:name].downcase}")
+    sub_category = SubCategory.where('lower(name) = ?', "#{params[:categories][:name].downcase}")
+    if category.present?
+      id = category.last.id
+    elsif sub_category.present?
+      id = sub_category.last.id
+    end
+    query = make_query(id, params[:categories][:city])
     @results = ActiveRecord::Base.connection.select_all(query).entries if params[:categories][:name].present? && params[:categories][:city].present?
     render :search_results
   end
 
   def autocomplete_categories
-    # @sub_categories = Category.joins(:sub_categories).select("id, name").where("categories.name LIKE ? or sub_categories.name LIKE ?", "#{params[:term]}%", "#{params[:term]}%").order(:name).limit(10)
-    
-
-    # categories = Category.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).select("id, name")
-    # sub_categories = SubCategory.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).select("id, name")
-    # results = (categories + sub_categories).flatten
-    # debugger
-    
-    categories = Category.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).pluck("id, name")
-    sub_categories = SubCategory.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).pluck("id, name")
-    results = (categories + sub_categories).map{|s| {"id" => s[0], "name" => s[1].titleize}}
+    categories = Category.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).pluck("name")
+    sub_categories = SubCategory.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).pluck("name")
+    results = (categories + sub_categories).map{|s| s.titleize}
     respond_to do |format|
       format.json { render json: results}
     end    
@@ -39,7 +38,14 @@ class CategoriesController < ApplicationController
 
   def find_near_area
     categories = session[:categories]
-    query = make_query(categories["name"], categories["city"], params[:area])
+    category = Category.where(name: categories[:name])
+    sub_category = SubCategory.where(name: categories[:name])
+    if category.present?
+      id = category.last.id
+    elsif sub_category.present?
+      id = sub_category.last.id
+    end
+    query = make_query(id, categories["city"], params[:area])
     @results = ActiveRecord::Base.connection.select_all(query).entries
     render :search_results
   end
