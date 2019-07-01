@@ -2,8 +2,8 @@ development:
   adapter: postgresql
   encoding: unicode
   database: casmoclap_dev
-  username: ratnakar
-  password: 
+  username: postgres
+  password: postgres
   host: localhost
   pool: 5
 
@@ -17,7 +17,8 @@ development:
 production:
   adapter: postgresql
   encoding: unicode
-  database: casmoclap_production
+  #database: casmoclap_production
+  database: casmoclap_prod
   username: postgres
   password: postgres
   host: localhost
