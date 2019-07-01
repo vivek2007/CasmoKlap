@@ -28,8 +28,8 @@ class CategoriesController < ApplicationController
   end
 
   def autocomplete_categories
-    categories = Category.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).pluck("name")
-    sub_categories = SubCategory.where("name LIKE ?", "%#{params[:term]}%").order(:name).limit(10).pluck("name")
+    categories = Category.where("lower(name) LIKE ?", "%#{params[:term].downcase}%").order(:name).limit(5).pluck("name")
+    sub_categories = SubCategory.where("lower(name) LIKE ?", "%#{params[:term].downcase}%").order(:name).limit(5).pluck("name")
     results = (categories + sub_categories).map{|s| s.titleize}
     respond_to do |format|
       format.json { render json: results}
@@ -38,8 +38,8 @@ class CategoriesController < ApplicationController
 
   def find_near_area
     categories = session[:categories]
-    category = Category.where(name: categories[:name])
-    sub_category = SubCategory.where(name: categories[:name])
+    category = Category.where('lower(name) = ?', "#{categories["name"].downcase}")
+    sub_category = SubCategory.where('lower(name) = ?', "#{categories["name"].downcase}")
     if category.present?
       id = category.last.id
     elsif sub_category.present?
