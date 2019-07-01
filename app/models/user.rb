@@ -7,6 +7,8 @@ class User < ApplicationRecord
   rolify
   has_one :profile, dependent: :destroy
   belongs_to :category, optional: true
+  validates_acceptance_of :terms
+  attr_accessor :terms
 
   def self.roles
     %w[admin user professional]

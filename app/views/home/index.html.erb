@@ -1,3 +1,75 @@
+<section class="banner">
+    <div class="banner-content text-center">
+        <h1>Your Service Expert In Kakinada</h1>
+        <p>Get instant access to reliable and affordable services</p>
+        <%= simple_form_for :categories , url: "/categories/search", html: { class: "form-inline justify-content-center banner-form", multipart: true}, method: "GET" do |f| %>
+            <div class="form-group ">
+                <div class="input-group-btn menu-icon ">
+                  <%= f.input :city , collection: City.all.map { |c| [c.name, c.id] }, input_html: {class: "select btn btn-bg-white text-box"}, :prompt => "Select City", label: false %>
+                </div >
+            </div>
+            <div class="form-group text-box">
+              <%= f.input :name , collection: Category.all.map { |c| [c.name, c.id] }, input_html: {class: 'form-control input-group-lg text-box'}, label: false %>
+            </div>
+            <div class="form-group btn btn-bg-white form-group-btn">
+                <button type="submit" class=" btn-gradient btn banner-btn">Submit
+                </button>
+            </div>
+        <% end %>
+
+    </div>
+
+</section>
+
+<!--services section-->
+<section class="services">
+
+    <div class="container ">
+        <div class="row text-center ">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//beauty.png" alt="">
+                    <p class="pt-2">Beauty & Spa</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//business.png" alt="">
+                    <p class="pt-2">Business</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//cleaning.png" alt="">
+                    <p class="pt-2">Cleaning</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//library.png" alt="">
+                    <p class="pt-2">Health & Wellness</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//personnal.png" alt="">
+                    <p class="pt-2">Personal & More</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+                <div class="service-info">
+                    <img src="assets//wedding.png" alt="">
+                    <p class="pt-2">Wedding & Events</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</section>
+<!--multiple image sliders-->
 <section class="categories">
 
     <div class="category-1">

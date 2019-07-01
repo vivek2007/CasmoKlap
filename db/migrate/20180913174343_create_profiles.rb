@@ -4,8 +4,8 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.string :id_type
       t.string :name_on_id
       t.bigint :id_number
-      t.attachment :id_front_image
-      t.attachment :id_back_image
+      t.string :id_front_image
+      t.string :id_back_image
       t.string :lane1
       t.string :lan2
       t.string :colony
@@ -22,7 +22,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.text :introduction
       t.boolean :degree_available
       t.string :service_location
-      t.attachment :avatar
+      t.string :avatar
       t.integer :user_id
       t.string :last_step
       t.integer :experience_in_years

@@ -13,9 +13,9 @@ class CategoriesController < ApplicationController
   end
 
   def search
-    @categories = Category.search(search_params)
-    @city = search_params[:city]
-
+    category = Category.where(id: params[:categories][:name]).last.id if params[:categories][:name].present?
+    city = City.where(id: params[:categories][:city]).last.id if params[:categories][:city].present?
+    @users = User.includes(:profile).references(:profile).where(city_id: city, category_id: category)
     render :search_results
   end
 

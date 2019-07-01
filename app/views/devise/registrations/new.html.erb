@@ -1,93 +1,94 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="wrap">
-        <p class="form-title">
-          Sign Up
-        </p>
-        <!-- <form class="login"> -->
-       	<% if params[:professional].present? %>
-       		<%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "signup"}) do |f| %>
-       			<div class="field form-group">
-	            <%= f.label "FULL NAME" %><br />
-	            <%= f.text_field :full_name, autofocus: true, autocomplete: "full_name", :class => "form-control"%>
-	          </div>
-	          <div class="field form-group">
-	            <%= f.label :email %><br />
-	            <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control" %>
-	          </div>
-	          <div class="field form-group">
-	            <%= f.label :password %><br />
-	            <% if @minimum_password_length %>
-	            <em>(<%= @minimum_password_length %> characters minimum)</em>
-	            <% end %><br />
-	            <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
-	          </div>
-	            <div class="field form-group">
-	              <%= f.label :city %><br />
-	              <%= f.text_field :city, autofocus: true, autocomplete: "city", :class => "form-control" %>
-	            </div>
-	            <div class="field form-group">
-	              <%= f.label "YOUR PRIMARY PROFESSION" %><br />
-	              <%#= f.text_field :category_id, autofocus: true, autocomplete: "category_id" %>
-	              <%= f.select :category_id, options_for_select(Category.all.map{|c| [c.name, c.id]}) , :class => "form-control"%>
-
-
-	            </div>
-	            <div class="field form-group">
-	              <%= f.label "PHONE NO" %><br />
-	              <%= f.text_field :phone, autofocus: true, autocomplete: "phone", :class => "form-control" %>
-	            </div>
-	            <%= hidden_field_tag 'role', 'professional'  %>
-	          <div class="actions">
-	            <%= f.submit "Sign up", class: "btn btn-success btn-sm" %>
-	          </div>
-	          <!-- <input type="submit" value="Sign In" class="btn btn-success btn-sm" /> -->
-	          <div class="">
-	            <div class="row">
-	              <div class="col-md-6 forgot-pass-content">
-	                <%#= render "devise/shared/links" %>
-	              </div>
-	            </div>
-	          </div>
-	        <% end %>
-       	<% else %>
-	        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "signup"}) do |f| %>
-	          <div class="field">
-	            <%= f.label :email %><br />
-	            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-	          </div>
-	          <div class="field">
-	            <%= f.label :password %><br />
-	            <% if @minimum_password_length %>
-	            <em>(<%= @minimum_password_length %> characters minimum)</em>
-	            <% end %><br />
-	            <%= f.password_field :password, autocomplete: "off" %>
-	          </div>
-	            <div class="field">
-	              <%= f.label :password_confirmation %><br />
-	              <%= f.password_field :password_confirmation, autocomplete: "off" %>
-	            </div>
-	          <div class="actions">
-	            <%= f.submit "Sign up", class: "btn btn-success btn-sm" %>
-	          </div>
-	          <!-- <input type="submit" value="Sign In" class="btn btn-success btn-sm" /> -->
-	          <div class="">
-	            <div class="row">
-	              <div class="col-md-6 forgot-pass-content">
-	                <%#= render "devise/shared/links" %>
-	              </div>
-	            </div>
-	          </div>
-	        <% end %>
-        <% end %>
-        <!-- </form> -->
+<%= render :partial => 'home/login_modal' %>
+<section class="signup">
+  <div class="py-5 signup-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 px-5 border-right form-col">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "signup"}) do |f| %>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="form-group mb-0">
+                <%= f.label "First name:", class: "col-form-label" %><br />
+                <%= f.text_field :first_name, autofocus: true, class: "form-control h-25" %>
+              </div>
+              <div class="form-group mb-0">
+                <%= f.label "Surname:", class: "col-form-label" %><br />
+                <%= f.text_field :last_name, autofocus: true, class: "form-control h-25" %>
+              </div>
+            </div>
+            <div class="form-group mb-0">
+              <%= f.label "E-mail Address:", class: "col-form-label" %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control h-25" %>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="form-group mb-0">
+                <%= f.label "Phone number:", class: "col-form-label" %><br />
+                <select class="btn border w-100">
+                  <option value="VISA">VISA</option>
+                  <option value="MasterCard">MasterCard</option>
+                </select>
+              </div>
+              <div class="form-group box">
+                <%= f.text_field :phone, class: "form-control", style: "margin-top: 64px;" %>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="form-group mb-0">
+                <%= f.label :password, class: "col-form-label" %><br />
+                <%= f.password_field :password, autocomplete: "off", :class => "form-control h-25" %>
+              </div>
+              <div class="form-group mb-0">
+                <%= f.label "Confirm the password:", class: "col-form-label" %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control h-25" %>
+              </div>
+            </div>
+            <div class="form-group pt-3">
+              <%= f.check_box :terms %> I accept the <a href="">Terms of use</a> and the <a href=""> privacy policy</a>
+            </div>
+            <% if params[:role] == "professional" %>
+              <div class="form-group mb-0">
+                <input name="role" type="hidden" value="professional"></input>
+              </div>
+            <% end %>
+            <div class="form-group">
+              <!--               <input type="submit" value="Verify My Number" class="btn btn-gradient w-100 mt-4 btn-hover-black"> -->
+              <%= f.submit "Submit", class: "btn btn-gradient w-100 mt-4 btn-hover-black" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6 signup-with social mt-4">
+          <div class="container px-5">
+            <h6>Sign up with your email</h6>
+            <p>Access to OyeAbhi is restricted. To join you need an email address that is valid in this community.</p>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text fb">
+                  <i class="fab fa-facebook-f mx-1"></i>
+                </div>
+              </div>
+              <input type="button" class="form-control facebook-btn " value="Log in with your account">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text google">
+                  <!--<i class="fab fa-google"></i>-->
+                  <img src="google_g_logo.png" class="img-fluid" width="20px" height="20px" alt="">
+                </div>
+              </div>
+              <input type="button" class="form-control google-btn" value="Log in with Google">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<style type="text/css">
-	#user_category_id {
-		width: 100%;
-	}
-</style>
+</section>
+
+<script type="text/javascript">
+  $(".signup").on("submit", function(){
+    if($('#user_terms')[0].checked) 
+      { return true; } 
+    else { 
+      alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; 
+    }
+  })
+</script>

@@ -5,13 +5,12 @@ Rails.application.routes.draw do
   resources :sub_categories
   resources :categories do 
     collection do 
-      post 'search'
+      get 'search'
     end
   end
   resources :profiles
   get 'home/index'
-  devise_for :users, :controllers => { :registrations => "registrations"}
-  # devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, :controllers => { :registrations => "registrations", sessions: "sessions"}
+  #devise_for :users, :controllers => {sessions: 'sessions'}
   root 'home#index'
 end

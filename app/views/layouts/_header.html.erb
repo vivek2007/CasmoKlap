@@ -10,102 +10,24 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">BLOG</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">LOGIN/SIGN UP</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link border border-color" href="#">BECOME A PROFESSIONAL</a>
-                </li>
+                <% unless current_user.present? %>  
+                  <li class="nav-item">
+                      <!-- <a class="nav-link" href="#">LOGIN/SIGN UP</a> -->
+                      <%#= link_to "LOGIN/SIGN UP", new_user_session_path, class: "nav-link" %>
+                      <%#= link_to('Login', new_user_session_path) %>
+                      <a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">LOGIN/SIGN UP</a>
 
-
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link border border-color" href="<%= new_user_registration_path%>?role=professional">BECOME A PROFESSIONAL</a>
+                  </li>
+                <% else %>
+                  <li class="nav-item">
+                    <a class="nav-link border border-color" data-method="delete" href="/users/sign_out">Logout</a>
+                  </li>
+                <% end %>
             </ul>
-
         </div>
     </div>
 </nav>
-
-
-<section class="banner">
-    <div class="banner-content text-center">
-        <h1>Your Service Expert In Kakinada</h1>
-        <p>Get instant access to reliable and affordable services</p>
-        <%= simple_form_for :categories , url: "/categories/search", html: { class: "form-inline justify-content-center banner-form", multipart: true}, method: "POST" do |f| %>
-            <div class="form-group ">
-                <div class="input-group-btn menu-icon">
-                  <%#= f.input :city , collection: [["kakinda", "Kakinda"], ["rajahmundry","Rajahmundry"]], input_html: {class: "select btn btn-bg-white"}, :prompt => "Select City", label: false %>
-
-                    <select class="select btn btn-bg-white" name="city">
-                        <option value="">Select City</option>
-                        <option value="Kakinada">Kakinada</option>
-                        <option value="Vishakapatnam">Vishakapatnam</option>
-                        <option value="Rajahmundry">Rajahmundry</option>
-         <!--                <option value="Vijaywada">Vijaywada</option>
-                        <option value="Guntur">Guntur</option>
-                        <option value="Amaravathi">Amaravathi</option>
-                        <option value="Thirupathi">Thirupathi</option>
-                        <option value="Nellore">Nellore</option> -->
-                    </select>
-                </div >
-            </div>
-            <div class="form-group text-box">
-              <%= f.input :name , input_html: {class: 'form-control input-group-lg text-box'}, label: false %>
-            </div>
-            <div class="form-group btn btn-bg-white form-group-btn">
-                <button type="submit" class=" btn-gradient btn banner-btn">Submit
-                </button>
-            </div>
-        <% end %>
-
-    </div>
-
-</section>
-
-<!--services section-->
-<section class="services">
-
-    <div class="container ">
-        <div class="row text-center ">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//beauty.png" alt="">
-                    <p class="pt-2">Beauty & Spa</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//business.png" alt="">
-                    <p class="pt-2">Business</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//cleaning.png" alt="">
-                    <p class="pt-2">Cleaning</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//library.png" alt="">
-                    <p class="pt-2">Health & Wellness</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//personnal.png" alt="">
-                    <p class="pt-2">Personal & More</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//wedding.png" alt="">
-                    <p class="pt-2">Wedding & Events</p>
-                </div>
-            </div>
-
-        </div>
-
-
-
-    </div>
-</section>
-<!--multiple image sliders-->
+<%= render :partial => 'home/login_modal' %>
