@@ -20,7 +20,7 @@
                     avatar = result["avatar"]
                     image_url = "/uploads/profile/avatar/#{id}/#{avatar}"
                   %>
-                  <div class="professionals-list border rounded mt-4">
+                  <div class="professionals-list border">
                     <div class="d-flex align-items-center professional-item border-bottom p-1" id="technician-<%= id %>">
                       <img src="<%= image_url %>" alt="" class="rounded-circle ml-2" width="40px" height="40px">
                       <div class="professional-name pl-4"><i><%= full_name%></i></div>
@@ -83,11 +83,11 @@
                   image_url = "/uploads/profile/avatar/#{id}/#{avatar}"
                   introduction = result["introduction"]
                 %>
-                <div class="row px-3 user-info-<%=id%>" style="display: none;">
-                  <div class="col-sm-3 ">
-                    <img src="<%= image_url %>" alt="" class="rounded-circle technician-#{id}" width="120px" height="120px" id="proff-img-<%= id%>">
+                <div class="row px-3">
+                  <div class="col-sm-3 user-info-<%=id%>" style="display: none;">
+                    <img src="<%= image_url %>" alt="" class="rounded-circle technician-#{id} proff-img-<%= id%>" width="120px" height="120px" id="proff-img">
                   </div>
-                  <div class="col-3 mt-4 name-star">
+                  <div class="col-3 mt-4 name-star user-info-<%=id%>" style="display: none;">
                     <h6 class="profile-name-<%= id%>"><%= full_name%></h6>
                     <div class="star-ratings d-flex mr-2">
                       <i class="fas fa-star"></i>
@@ -97,7 +97,7 @@
                       <i class="fas fa-star"></i>
                     </div>
                   </div>
-                  <div class="col-6">
+                  <div class="col-6 user-info-<%=id%>" style="display: none;">
                     <div class="medals text-right pt-2">
                       <%= image_tag 'medal-1.png', alt:"", class: "p-0 py-1", :style => "width: 30px" %>
                       <%= image_tag 'medal.png', alt:"", class: "p-0 py-1", :style => "width: 30px" %>
@@ -197,7 +197,7 @@
         $("#technician-<%=id%>").click(function(e) {
           $('*[class*="user-info-"]').css("display", "none");
           $(".user-info-<%=id%>").css("display", "block");
-          $('#proff-img-<%= id%>').attr('src', "<%= image_url %>");
+          $('.proff-img-<%= id%>').attr('src', "<%= image_url %>");
           var pName = $("#technician-<%=id%> .professional-name");
           $('.profile-name-<%= id%>').text(pName.text());
           $('#about-me-text-<%= id%>').text("“<%=introduction%>”");
@@ -215,7 +215,7 @@
 /*professionals section*/
         .professionals-list
         {
-          border: 2px solid #ccc !important;
+          /*border: 2px solid #ccc !important;*/
             max-height: 500px !important;
             overflow-y: auto
 
@@ -351,7 +351,7 @@
         color: #fff;
         font-size: 18px;
         margin:0 5px;
-        margin-right: 35px;
+        margin-right: -212px;
         }
         .review .btn:hover
         {
@@ -591,6 +591,27 @@ select {
 
 }
     
-    
-    
+.pl-3, .px-3 {
+  padding-left: 1rem !important;
+}   
+
+element.style {
+}
+.review .dark-header {
+    max-width: 915px;
+}
+.dark-header {
+    background-color: #266a77 !important;
+    border-radius: 20px 20px 0 0px;
+    position: relative;
+}
+.ml-auto, .mx-auto {
+    margin-left: auto !important;
+}
+.mr-auto, .mx-auto {
+    margin-right: auto !important;
+}
+.mt-5, .my-5 {
+    margin-top: 2rem !important;
+}
     </style>
