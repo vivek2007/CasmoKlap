@@ -90,6 +90,8 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  ENV['TWILIO_ACCOUNT_SID'] = "AC7008765c05d2808827ba56e9617f610e"
+  ENV['TWILIO_AUTH_TOKEN'] = "dcda576d7225a154a90c80b7a8264f5b"
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end

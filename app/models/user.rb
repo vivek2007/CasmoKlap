@@ -10,7 +10,12 @@ class User < ApplicationRecord
   belongs_to :sub_category, optional: true
   belongs_to :area, optional: true
   validates_acceptance_of :terms
-  attr_accessor :terms
+  validate :first_name
+  validate :last_name
+  validates :phone,:presence => true,
+                 :numericality => true,
+                 :length => { :minimum => 10, :maximum => 15 }
+  attr_accessor :terms, :professional_id
 
   def self.roles
     %w[admin user professional]
@@ -32,4 +37,17 @@ class User < ApplicationRecord
     self.last_step.nil? ? :identity_proof : self.last_step
   end
 
+  def twilio_client
+    Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
+  end
+
+  def send_messages(professional_id)
+    [self, User.where(id: professional_id).last].each do |user|
+      user.twilio_client.messages.create(
+        body: 'Hello Arindam, how r u?', 
+        from: '+19712056208',       
+        to: '+91'+user.phone.to_s 
+      )
+    end
+  end
 end

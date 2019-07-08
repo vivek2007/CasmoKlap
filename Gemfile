@@ -47,7 +47,7 @@ gem 'carrierwave'
 gem 'wicked'
 gem "nested_form_fields"
 gem 'jquery-ui-rails'
-
+gem 'twilio-ruby'
 
 
 # Use Capistrano for deployment
