@@ -42,11 +42,12 @@ class User < ApplicationRecord
   end
 
   def send_messages(professional_id)
-    [self, User.where(id: professional_id).last].each do |user|
-      user.twilio_client.messages.create(
+    # [self, User.where(id: professional_id).last].each do |user|
+      self.twilio_client.messages.create(
         body: 'Hello Arindam, how r u?', 
-        from: '+19712056208',       
-        to: '+91'+user.phone.to_s 
+        #from: '+19712056208',
+        from: '+14695572455',       
+        to: '+91'+self.phone.to_s 
       )
     end
   end
