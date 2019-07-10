@@ -52,9 +52,9 @@ class CategoriesController < ApplicationController
 
   def make_query cat_name, city, area = nil
     if area.present?
-      "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, profiles.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.category_id = #{cat_name} or sub_categories.id = #{cat_name}) and users.city_id = #{city} and users.area_id = #{area}"
+      "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, users.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.category_id = #{cat_name} or sub_categories.id = #{cat_name}) and users.city_id = #{city} and users.area_id = #{area}"
     else
-      "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, profiles.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.category_id = #{cat_name} or sub_categories.id = #{cat_name}) and users.city_id = #{city}"
+      "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, users.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.category_id = #{cat_name} or sub_categories.id = #{cat_name}) and users.city_id = #{city}"
     end
   end
 
