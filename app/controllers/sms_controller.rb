@@ -6,8 +6,8 @@ class SmsController < ApplicationController
     @user.password_confirmation = "password"
     respond_to do |format|
       if @user.valid?
-        @user.send_messages(params["user"]["professional_id"])
         @user.save
+        @user.send_messages(params["user"]["professional_id"])
         format.js
         format.json
       else
