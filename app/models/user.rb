@@ -42,13 +42,15 @@ class User < ApplicationRecord
   end
 
   def send_messages
-    # [self, User.where(id: professional_id).last].each do |user|
+    begin
       self.twilio_client.messages.create(
         body: 'Your request has been processed', 
         #from: '+19712056208',
         from: '+14695572455',       
         to: '+91'+self.phone.to_s 
       )
-    # end
+    rescue Exception => e
+      
+    end
   end
 end
