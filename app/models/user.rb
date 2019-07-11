@@ -49,6 +49,6 @@ class User < ApplicationRecord
         from: '+14695572455',       
         to: '+91'+self.phone.to_s 
       )
-    end
+    # end
   end
 end
