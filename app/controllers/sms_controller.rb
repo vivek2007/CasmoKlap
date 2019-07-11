@@ -5,12 +5,13 @@ class SmsController < ApplicationController
     @user.password = "password"
     @user.password_confirmation = "password"
     respond_to do |format|
-      if @user.valid?
+      begin
         @user.save
-        @user.send_messages(params["user"]["professional_id"])
+        @user.send_messages
         format.js
         format.json
-      else
+      rescue Exception => e
+        format.js
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

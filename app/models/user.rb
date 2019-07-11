@@ -41,10 +41,10 @@ class User < ApplicationRecord
     Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
   end
 
-  def send_messages(professional_id)
+  def send_messages
     # [self, User.where(id: professional_id).last].each do |user|
       self.twilio_client.messages.create(
-        body: 'Hello Arindam, how r u?', 
+        body: 'Your request has been processed', 
         #from: '+19712056208',
         from: '+14695572455',       
         to: '+91'+self.phone.to_s 
