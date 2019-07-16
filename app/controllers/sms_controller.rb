@@ -16,6 +16,11 @@ class SmsController < ApplicationController
     end
   end
 
+  def send_sms_for_register_user
+    user = User.where("email"=>params[:email], "phone"=>params[:phone]).last
+    @user.send_messages if user.present?
+  end
+
   private
 
   def permit_user
