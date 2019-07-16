@@ -18,7 +18,13 @@ class SmsController < ApplicationController
 
   def send_sms_for_register_user
     user = User.where("email"=>params[:email], "phone"=>params[:phone]).last
-    @user.send_messages if user.present?
+    if user.present?
+      @user.send_messages
+      format.json
+      format.js
+    else
+      @ajax_error = 'You are not registered with either email or mobile number'
+    end
   end
 
   private
