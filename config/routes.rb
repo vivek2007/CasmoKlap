@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :profiles
   post "sms" => "sms#send_sms"
+  post "send_sms_for_register_user" => "sms#send_sms_for_register_user"
   get 'home/index'
   devise_for :users, :controllers => { :registrations => "registrations", sessions: "sessions"}
   #devise_for :users, :controllers => {sessions: 'sessions'}

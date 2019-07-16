@@ -14,7 +14,8 @@ class User < ApplicationRecord
   validate :last_name
   validates :phone,:presence => true,
                  :numericality => true,
-                 :length => { :minimum => 10, :maximum => 15 }
+                 :length => { :minimum => 10, :maximum => 15 },
+                 :uniqueness => true
   attr_accessor :terms, :professional_id
 
   def self.roles
