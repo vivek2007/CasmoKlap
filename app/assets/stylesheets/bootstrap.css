@@ -4145,7 +4145,7 @@ input[type="button"].btn-block {
 }
 
 .navbar {
-  position: relative;
+  position: inherit;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;

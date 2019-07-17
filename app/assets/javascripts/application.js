@@ -12,7 +12,6 @@
 //
 //= require jquery-3.3.1.min 
 //= require jquery_ujs
-//= require turbolinks
 //= require popper.min
 //= require bootstrap
 //= require owl.carousel.min
