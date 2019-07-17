@@ -12,10 +12,7 @@ class User < ApplicationRecord
   validates_acceptance_of :terms
   validate :first_name
   validate :last_name
-  validates :phone,:presence => true,
-                 :numericality => true,
-                 :length => { :minimum => 10, :maximum => 15 },
-                 :uniqueness => true
+  validates_presence_of :phone, :numericality => true, :length => { :minimum => 10, :maximum => 15 }, :uniqueness => true, :message => "can't be blank"
   attr_accessor :terms, :professional_id
 
   def self.roles
