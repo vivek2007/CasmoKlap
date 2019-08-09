@@ -27,6 +27,14 @@ class CategoriesController < ApplicationController
     render :search_results
   end
 
+  def search_by_category
+    @results ||= []
+    sub_category = SubCategory.where(id: params[:subcategory_id])
+    query = make_query sub_category.last.id if sub_category.present?
+    @results = ActiveRecord::Base.connection.select_all(query).entries if query.present?
+    render :search_results
+  end
+
   def autocomplete_categories
     categories = Category.where("lower(name) LIKE ?", "%#{params[:term].downcase}%").order(:name).limit(5).pluck("name")
     sub_categories = SubCategory.where("lower(name) LIKE ?", "%#{params[:term].downcase}%").order(:name).limit(5).pluck("name")
@@ -50,11 +58,13 @@ class CategoriesController < ApplicationController
     render :search_results
   end
 
-  def make_query cat_name, city, area = nil
-    if area.present?
+  def make_query cat_name, city = nil, area = nil
+    if cat_name.present? && city.present? && area.present?
       "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, users.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.category_id = #{cat_name} or sub_categories.id = #{cat_name}) and users.city_id = #{city} and users.area_id = #{area}"
-    else
+    elsif cat_name.present? && city.present? && area.blank?
       "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, users.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.category_id = #{cat_name} or sub_categories.id = #{cat_name}) and users.city_id = #{city}"
+    elsif cat_name.present? && city.blank? && area.blank?
+      "SELECT sub_categories.id as cat_id, users.email, users.first_name, users.last_name, users.id, profiles.avatar, profiles.city, profiles.state, profiles.country, profiles.introduction FROM sub_categories INNER JOIN users ON users.sub_category_id = sub_categories.id LEFT OUTER JOIN profiles ON profiles.user_id = users.id WHERE (sub_categories.id = #{cat_name})"
     end
   end
 

@@ -1,484 +1,184 @@
 <section class="banner">
-    <div class="banner-content text-center">
-        <h1>Your Service Expert In Kakinada</h1>
-        <p>Get instant access to reliable and affordable services</p>
-        <%= simple_form_for :categories , url: "/categories/search", html: { class: "form-inline justify-content-center banner-form", multipart: true}, method: "GET" do |f| %>
-            <div class="form-group ">
-                <div class="input-group-btn menu-icon">
-                  <%= f.input :city , collection: City.all.map { |c| [c.name, c.id] }, input_html: {class: "select btn btn-bg-white text-box "}, :prompt => "Select City", label: false %>
-                </div >
-            </div>
-            <div class="form-group text-box">
-              <div class="input-group-btn ">
-                <%= f.input :name, as: :search, input_html: {data: {autocomplete_source: autocomplete_categories_path, remote: true}, placeholder: "Select Category", class: "custom-form-control"}, label: false %>
-              </div>
-            </div>
-            <div class="form-group btn btn-bg-white form-group-btn">
-                <button type="submit" class=" btn-gradient btn banner-btn">Search
-                </button>
-            </div>
-        <% end %>
-
-    </div>
-
+  <div class="banner-content text-center">
+    <h1>Your Service Expert In Kakinada</h1>
+    <p>Get instant access to reliable and affordable services</p>
+    <%= simple_form_for :categories , url: "/categories/search", html: { class: "form-inline justify-content-center banner-form", multipart: true}, method: "GET" do |f| %>
+      <div class="form-group ">
+          <div class="input-group-btn menu-icon">
+            <%= f.input :city , collection: City.all.map { |c| [c.name, c.id] }, input_html: {class: "select btn btn-bg-white text-box "}, :prompt => "Select City", label: false %>
+          </div >
+      </div>
+      <div class="form-group text-box">
+        <div class="input-group-btn ">
+          <%= f.input :name, as: :search, input_html: {data: {autocomplete_source: autocomplete_categories_path, remote: true}, placeholder: "Select Category", class: "custom-form-control"}, label: false %>
+        </div>
+      </div>
+      <div class="form-group btn btn-bg-white form-group-btn">
+          <button type="submit" class=" btn-gradient btn banner-btn">Search
+          </button>
+      </div>
+    <% end %>
+  </div>
 </section>
 
 <!--services section-->
 <section class="services">
-
-    <div class="container ">
-        <div class="row text-center ">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//beauty.png" alt="">
-                    <p class="pt-2">Beauty & Spa</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//business.png" alt="">
-                    <p class="pt-2">Business</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//cleaning.png" alt="">
-                    <p class="pt-2">Cleaning</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//library.png" alt="">
-                    <p class="pt-2">Health & Wellness</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//personnal.png" alt="">
-                    <p class="pt-2">Personal & More</p>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
-                <div class="service-info">
-                    <img src="assets//wedding.png" alt="">
-                    <p class="pt-2">Wedding & Events</p>
-                </div>
-            </div>
-
+  <div class="container ">
+    <div class="row text-center ">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+        <div class="service-info">
+          <img src="assets//beauty.png" alt="">
+          <p class="pt-2">Beauty & Spa</p>
         </div>
-
-
-
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+        <div class="service-info">
+          <img src="assets//business.png" alt="">
+          <p class="pt-2">Business</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+        <div class="service-info">
+          <img src="assets//cleaning.png" alt="">
+          <p class="pt-2">Cleaning</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+        <div class="service-info">
+          <img src="assets//library.png" alt="">
+          <p class="pt-2">Health & Wellness</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+        <div class="service-info">
+          <img src="assets//personnal.png" alt="">
+          <p class="pt-2">Personal & More</p>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-2 mx-auto">
+        <div class="service-info">
+          <img src="assets//wedding.png" alt="">
+          <p class="pt-2">Wedding & Events</p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 <!--multiple image sliders-->
 <section class="categories">
-
-    <div class="category-1">
-        <div class="container mt-4 ">
-            <div class="row">
-                <h5 class="pb-2">Recommended Services</h5>
-                <div class="carousel carousel-1 owl-carousel owl-theme">
-
-                    <div class="item active" id="hide">
-                        <a href="#"><img src="assets/salon-at-home.jpg" alt="">
-                            <p>Salon at Home for Women</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/AC.jpg" alt="">
-                            <p>AC Repair</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/floor_cleaning3.jpg" alt="">
-                            <p>Home Deep Cleaning</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/chartered-accountant-insurance.jpg" alt="">
-                            <p>Chartered Accountant</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/pest_control.jpg" alt="">
-                            <p>Pest Control</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/kitchen_deep_cleaning.jpg" alt="">
-                            <p>Kitchen Deep Cleaning</p>
-                        </a>
-                    </div>
-
-
-                </div>
-
-                <div class="owl-stage-outer">
-                    <div class="owl-stage">
-                        <div class="owl-item left l1"><img src="assets/Rounded_shift_left_arrow.png" alt=""></div>
-                        <div class="owl-item right r1"><img src="assets/circled-chevron-right.png" alt=""></div>
-                    </div>
-
-                </div>
-            </div>
+  <div class="category-0 cat-carousel">
+    <div class="container mt-4 ">
+      <div class="row">
+        <h5 class="pb-2">Recommended Services</h5>
+        <div class="carousel carousel-0 owl-carousel owl-theme">
+          <div class="item active" id="hide">
+            <a href="#"><img src="assets/salon-at-home.jpg" alt="">
+              <p>Salon at Home for Women</p>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="assets/AC.jpg" alt="">
+              <p>AC Repair</p>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="assets/floor_cleaning3.jpg" alt="">
+              <p>Home Deep Cleaning</p>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="assets/chartered-accountant-insurance.jpg" alt="">
+              <p>Chartered Accountant</p>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="assets/pest_control.jpg" alt="">
+              <p>Pest Control</p>
+            </a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="assets/kitchen_deep_cleaning.jpg" alt="">
+              <p>Kitchen Deep Cleaning</p>
+            </a>
+          </div>
         </div>
-    </div>
-    <div class="category-2">
-        <div class="container mt-2">
-            <div class="row">
-                <h5 class="pb-2">Appliance Repair</h5>
-                <div class="carousel carousel-2 owl-carousel owl-theme">
-
-                    <div class="item active" id="hide">
-                        <a href="#"><img src="assets/washing_machine_repair2.jpg" alt="">
-                            <p>Washing Machain Repair</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/Fridge-Repair2.jpg" alt="">
-                            <p>Refrigerator Repair</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/ro%20repair%20work.jpg" alt="">
-                            <p>RO or Water Purifier Repair</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/microwave-repair-services.jpg" alt="">
-                            <p>Microwave</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/laptop%20repair.jpg" alt="">
-                            <p>Laptop Repair</p>
-                        </a>
-                    </div>
-
-
-
-
-                </div>
-
-                <div class="owl-stage-outer">
-                    <div class="owl-stage">
-                        <div class="owl-item left left-2"><img src="assets/Rounded_shift_left_arrow.png" alt=""></div>
-                        <div class="owl-item right right-2"><img src="assets/circled-chevron-right.png" alt=""></div>
-                    </div>
-
-                </div>
-            </div>
+        <div class="owl-stage-outer">
+          <div class="owl-stage">
+            <div class="owl-item left left-0"><img src="assets/Rounded_shift_left_arrow.png" alt=""></div>
+            <div class="owl-item right right-0"><img src="assets/circled-chevron-right.png" alt=""></div>
+          </div>
         </div>
+      </div>
     </div>
-
-    <div class="category-3">
-        <div class="container mt-2 ">
-            <div class="row">
-                <h5 class="pb-2">Home Cleaning</h5>
-                <div class="carousel carousel-3 owl-carousel owl-theme">
-
-                    <div class="item active" id="hide">
-                        <a href="#"><img src="assets/sofa_cleaning.jpg" alt="">
-                            <p>Sofa Cleaning</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/bathroom_deep_cleaningh.jpg" alt="">
-                            <p>Bathroom Deep Cleaning</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/floor_cleaning3.jpg" alt="">
-                            <p>Home Deep Cleaning</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/kitchen_deep_cleaning.jpg" alt="">
-                            <p>Kitchen Deep Cleaning</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/Carpet%20cleaning.jpg" alt="">
-                            <p>Carpet Cleaning</p>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="owl-stage-outer">
-                    <div class="owl-stage">
-                        <div class="owl-item left left-3"><img src="assets/Rounded_shift_left_arrow.png" alt=""></div>
-                        <div class="owl-item right right-3"><img src="assets/circled-chevron-right.png" alt=""></div>
-                    </div>
-
-                </div>
+  </div>
+  <% categories = Category.all %>
+  <% categories.each do |cat| %>
+    <div class="category-<%= cat.id+1 %>  cat-carousel">
+      <div class="container mt-2">
+        <div class="row">
+          <h5 class="pb-2"><%= cat.name %></h5>
+          <div class="carousel carousel-<%= cat.id+1 %> owl-carousel owl-theme">
+            <% cat.sub_categories.each do |sub| %>
+              <div class="item">
+                <a href="<%= search_by_category_categories_path %>?category_id=<%=cat.id%>&subcategory_id=<%=sub.id%>">
+                  <img src="<%= sub.image.url %>" alt="">
+                  <p><%= sub.name %></p>
+                </a>
+              </div>
+            <% end %>
+          </div>
+          <div class="owl-stage-outer">
+            <div class="owl-stage">
+              <div class="owl-item left left-<%= cat.id+1 %>"><img src="assets/Rounded_shift_left_arrow.png" alt=""></div>
+              <div class="owl-item right right-<%= cat.id+1 %>"><img src="assets/circled-chevron-right.png" alt=""></div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="category-4">
-        <div class="container mt-2">
-            <div class="row">
-                <h5 class="pb-2">Shifting Homes</h5>
-                <div class="carousel carousel-4 owl-carousel owl-theme">
-
-                    <div class="item active" id="hide">
-                        <a href="#"><img src="assets/packers&movers.jpg" alt="">
-                            <p>Packers & Movers</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/wall_painter1.jpg" alt="">
-                            <p>House Painters</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/pest_control.jpg" alt="">
-                            <p>Pest Control</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/Electrician.jpg" alt="">
-                            <p>Electrician</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/plumber.jpg" alt="">
-                            <p>Plumber</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/Carpenter_with_tools.jpg" alt="">
-                            <p>Carpenter</p>
-                        </a>
-                    </div>
-
-
-                </div>
-
-                <div class="owl-stage-outer">
-                    <div class="owl-stage">
-                        <div class="owl-item left left-4"><img src="assets/Rounded_shift_left_arrow.png" alt=""></div>
-                        <div class="owl-item right right-4"><img src="assets/circled-chevron-right.png" alt=""></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="category-5">
-        <div class="container mt-2">
-            <div class="row">
-                <h5 class="pb-2">Wedding Services</h5>
-                <div class="carousel carousel-5 owl-carousel owl-theme">
-
-                    <div class="item active" id="hide">
-                        <a href="#"><img src="assets/hairstyle_makeup.jpg" alt="">
-                            <p>HairStyle & Makeup</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/mehendi.jpg" alt="">
-                            <p>Mehendi Artist</p>
-                        </a>
-                    </div>
-
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/wedding_photographers.jpg" alt="">
-                            <p>Wedding Photographer</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/wedding-photography.jpg" alt="">
-                            <p>Pre-Wedding Shoot</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/wedding%20Venue.jpg" alt="">
-                            <p>Wedding Venue</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/wedding_cataring.jpg" alt="">
-                            <p>Wedding Cataring</p>
-                        </a>
-                    </div>
-
-
-
-                </div>
-
-                <div class="owl-stage-outer">
-                    <div class="owl-stage">
-                        <div class="owl-item left left-5"><img src="assets/Rounded_shift_left_arrow.png" alt=""></div>
-                        <div class="owl-item right right-5"><img src="assets/circled-chevron-right.png" alt=""></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="category-6">
-        <div class="container mt-2">
-            <div class="row">
-                <h5 class="pb-2">Help for Your Business</h5>
-                <div class="carousel carousel-6 owl-carousel owl-theme">
-
-                    <div class="item active" id="hide">
-                        <a href="#"><img src="assets/chartered-accountant-insurance.jpg" alt="">
-                            <p>Chartered Accountant</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/web-developer.jpg" alt="">
-                            <p>Web developer</p>
-                        </a>
-                    </div>
-
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/ca_IT_filing.jpg" alt="">
-                            <p>CA for IT Filing</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/banking.jpg" alt="">
-                            <p>Banking</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/wedding%20Venue.jpg" alt="">
-                            <p>Wedding Venue</p>
-                        </a>
-                    </div>
-
-                    <div class="item">
-                        <a href="#">
-                            <img src="assets/wedding_cataring.jpg" alt="">
-                            <p>Wedding Cataring</p>
-                        </a>
-                    </div>
-
-
-
-                </div>
-
-                <div class="owl-stage-outer">
-                    <div class="owl-stage">
-                        <div class="owl-item left left-6"><img src="assets/Rounded_shift_left_arrow.png" alt=""></div>
-                        <div class="owl-item right right-6"><img src="assets/circled-chevron-right.png" alt=""></div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+  <% end %>
 </section>
 <section class="rennovating_planning pt-3 pb-2">
-
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 text-center">
-                <div class="content pb-3 mb-3">
-                    <a href="#">
-                        <div class="img-grp">
-                            <img src="assets/renovation-image2.jpg" alt="" class="img-fluid img1" id="animation-left-1">
-                            <img src="assets/renovation-image1.jpg" alt="" class="img-fluid img2" id="animation-right-1">
-                            <img src="assets/renovation-image.jpg" alt="" class="img-fluid img3">
-                        </div>
-
-                        <h3 class="py-1">Renovating Your Home?</h3>
-                        <p class="px-5">Get inspiration ideas from 1000+ projects on home renovation and design</p>
-                    </a>
-
-                    <a href="#" class="btn btn-gradient browse-ideas-btn">BROWSE IDEAS</a>
-                </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 text-center">
+        <div class="content pb-3 mb-3">
+          <a href="#">
+            <div class="img-grp">
+                <img src="assets/renovation-image2.jpg" alt="" class="img-fluid img1" id="animation-left-1">
+                <img src="assets/renovation-image1.jpg" alt="" class="img-fluid img2" id="animation-right-1">
+                <img src="assets/renovation-image.jpg" alt="" class="img-fluid img3">
             </div>
-            <div class="col-lg-6 text-center">
-                <div class="content pb-3">
-                    <a href="#">
-                        <div class="img-grp2">
-                            <img src="assets/wedding-couple-6-1.jpg" alt="" class="img-fluid img1 rounded-circle" id="animation-left-2">
-                            <img src="assets/wedding-pic2.jpg" alt="" class="img-fluid img2  rounded-circle"  id="animation-right-2">
-                            <img src="assets/wedd.jpg" alt="" class="img-fluid img3 rounded-circle">
-                        </div>
-
-                        <h3 class="py-1">Planning a Wedding?</h3>
-                        <p class="px-5">Get inspiration ideas from 1000+ projects on home renovation and design</p>
-
-                    </a>
-
-                    <a href="#" class="btn btn-gradient browse-ideas-btn">BROWSE IDEAS</a>
-                </div>
-            </div>
+            <h3 class="py-1">Renovating Your Home?</h3>
+            <p class="px-5">Get inspiration ideas from 1000+ projects on home renovation and design</p>
+          </a>
+          <a href="#" class="btn btn-gradient browse-ideas-btn">BROWSE IDEAS</a>
         </div>
+      </div>
+      <div class="col-lg-6 text-center">
+        <div class="content pb-3">
+          <a href="#">
+            <div class="img-grp2">
+              <img src="assets/wedding-couple-6-1.jpg" alt="" class="img-fluid img1 rounded-circle" id="animation-left-2">
+              <img src="assets/wedding-pic2.jpg" alt="" class="img-fluid img2  rounded-circle"  id="animation-right-2">
+              <img src="assets/wedd.jpg" alt="" class="img-fluid img3 rounded-circle">
+            </div>
+            <h3 class="py-1">Planning a Wedding?</h3>
+            <p class="px-5">Get inspiration ideas from 1000+ projects on home renovation and design</p>
+          </a>
+          <a href="#" class="btn btn-gradient browse-ideas-btn">BROWSE IDEAS</a>
+        </div>
+      </div>
     </div>
-
-
-
+  </div>
 </section>
-
-
 <section class="testimonials py-3 ">
-
-
     <div class="container text-center">
-
         <h2>Satisfied Customers Testimonials & Referrals</h2>
         <p class="caption">Lorem ipsum dolor sit amet, consectetur adi Labore e Labore expedimus veipsum dolor<br> sit amet, consectetur adi sit amet, consectetur adie expedimus veniam.</p>
         <div class="row mx-auto py-3">
@@ -800,9 +500,47 @@
     </section>
 <script type="text/javascript">
   jQuery(function() {
-  return $('#categories_name').autocomplete({
-    source: $('#categories_name').data('autocomplete-source')
+    return $('#categories_name').autocomplete({
+      source: $('#categories_name').data('autocomplete-source')
+    });
   });
+
+/*Carousel */
+$(document).ready(function () {
+  <% (0..categories.size+1).each do |index| %>
+    $(".carousel-<%= index %>").owlCarousel({
+        loop: false,
+        margin: 20,
+       nav: false,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            700: {
+                items: 2
+            },
+            900: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
+    var owl = $(".carousel-<%= index %>");
+    owl.owlCarousel();
+    // Go to the next item
+    $(".right-<%= index %>").click(function () {
+        owl.trigger('next.owl.carousel');
+    })
+    // Go to the previous item
+    $(".left-<%= index %>").click(function () {
+        // With optional speed parameter
+        // Parameters has to be in square bracket '[]'
+        owl.trigger('prev.owl.carousel', [300]);
+    });
+  <% end %>
 });
 </script>
 <style type="text/css">
