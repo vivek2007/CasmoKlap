@@ -118,11 +118,11 @@
   </div>
   <% categories = Category.all %>
   <% categories.each do |cat| %>
-    <div class="category-<%= cat.id+1 %>  cat-carousel">
+    <div class="category-<%= cat.id%>  cat-carousel">
       <div class="container mt-2">
         <div class="row">
           <h5 class="pb-2"><%= cat.name %></h5>
-          <div class="carousel carousel-<%= cat.id+1 %> owl-carousel owl-theme">
+          <div class="carousel carousel-<%= cat.id%> owl-carousel owl-theme">
             <% cat.sub_categories.each do |sub| %>
               <div class="item">
                 <a href="<%= search_by_category_categories_path %>?category_id=<%=cat.id%>&subcategory_id=<%=sub.id%>">
@@ -134,8 +134,8 @@
           </div>
           <div class="owl-stage-outer">
             <div class="owl-stage">
-              <div class="owl-item left left-<%= cat.id+1 %>"><img src="assets/Rounded_shift_left_arrow.png" alt=""></div>
-              <div class="owl-item right right-<%= cat.id+1 %>"><img src="assets/circled-chevron-right.png" alt=""></div>
+              <div class="owl-item left left-<%= cat.id%>"><img src="assets/Rounded_shift_left_arrow.png" alt=""></div>
+              <div class="owl-item right right-<%= cat.id%>"><img src="assets/circled-chevron-right.png" alt=""></div>
             </div>
           </div>
         </div>
@@ -506,8 +506,8 @@
   });
 
 /*Carousel */
-$(document).ready(function () {
-  <% (0..categories.size+1).each do |index| %>
+<% (0..categories.size).each do |index| %>
+  $(document).ready(function () {
     $(".carousel-<%= index %>").owlCarousel({
         loop: false,
         margin: 20,
@@ -540,8 +540,8 @@ $(document).ready(function () {
         // Parameters has to be in square bracket '[]'
         owl.trigger('prev.owl.carousel', [300]);
     });
-  <% end %>
-});
+  });
+<% end %>
 </script>
 <style type="text/css">
   ul.ui-autocomplete {
