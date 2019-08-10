@@ -1,5 +1,6 @@
 <% unless @ajax_error.present? %>
 $("#sendMessage").modal('toggle');
 <% else %>
-  $(".already-a-member").prepend("<%= @ajax_error %>").css("color", "red")
+$("#send_sms_for_register_user_error").html("")
+  $("#send_sms_for_register_user_error").html("<%= @ajax_error %>").css("color", "red")
 <% end %>

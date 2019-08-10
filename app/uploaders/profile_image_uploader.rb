@@ -1,4 +1,4 @@
-class SubCategoryImageUploader < CarrierWave::Uploader::Base
+class ProfileImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -13,8 +13,7 @@ class SubCategoryImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
   def default_url(*args)
-    # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-    "/assets/default.jpeg"
+    "/assets/default.png"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

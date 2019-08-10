@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :categories do 
     collection do 
       get 'search'
+      get 'search_by_category'
     end
   end
   resources :profiles

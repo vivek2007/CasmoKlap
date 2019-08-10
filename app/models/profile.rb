@@ -8,7 +8,7 @@ class Profile < ApplicationRecord
 	accepts_nested_attributes_for :work_photos, allow_destroy: true
 	has_many :certificates
 	accepts_nested_attributes_for :certificates, allow_destroy: true
-  mount_uploader :avatar, SubCategoryImageUploader
+  mount_uploader :avatar, ProfileImageUploader
 
 
 	# has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
