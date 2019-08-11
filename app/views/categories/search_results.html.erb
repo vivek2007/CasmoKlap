@@ -213,10 +213,10 @@ No results found.
               <span id="send_sms_for_register_user_error"></span>
               <%= form_tag send_sms_for_register_user_path, remote: true, :class=> "send_sms_for_register_user" do %>
               <div class="form-group">
-                <%= text_field_tag :email, nil, class: "txt", style: "width: 236%;", placeholder: "Please input your Email"%>
+                <%= text_field_tag :email, nil, class: "txt not-member-txt", placeholder: "Please input your Email"%>
               </div>
               <div class="form-group">
-                <%= text_field_tag :phone, nil, class: "txt", style: "width: 236%;", placeholder: "Please input your Mobile No"%>
+                <%= text_field_tag :phone, nil, class: "txt not-member-txt", placeholder: "Please input your Mobile No"%>
               </div>
               <%= hidden_field_tag :professional_id %>
               <div>
@@ -495,10 +495,21 @@ No results found.
   .signup .container .form-col {
   padding-right: 5% !important
   }
+  .not-member-txt {
+    max-width: 115% !important;
+  }
+  }
+  @media screen and (max-width:768px) {
+  .not-member-txt {
+    max-width: 115% !important;
+  }
   }
   @media screen and (max-width:991px) {
   .signup .col-md-12 {
   border: none !important
+  }
+  .not-member-txt {
+    max-width: 115% !important;
   }
   }
   @media screen and (max-width:991px) and (min-width:768px) {
@@ -509,10 +520,16 @@ No results found.
   .signup-with .container {
   padding: 0 30px !important;
   }
+  .not-member-txt {
+    max-width: 115% !important;
+  }
   }
   @media screen and (max-width:767px) {
   .signup .d-flex {
   justify-content: space-around !important;
+  }
+  .not-member-txt {
+    max-width: 115% !important;
   }
   .signup .d-flex .form-group:first-child {
   margin-right: 20px
@@ -635,6 +652,9 @@ No results found.
   margin:0 0px;
   margin-right: 01px !important;
   }
+  .not-member-txt {
+    max-width: 115% !important;
+  }
   }
   @media screen and (max-width:434px) {
   .signup .col-md-12 {
@@ -652,6 +672,9 @@ No results found.
   .signup .box {
   padding: 0px !important;
   margin-top: 20px !important
+  }
+  .not-member-txt {
+    max-width: 115% !important;
   }
   }
   .pl-3, .px-3 {
@@ -746,5 +769,8 @@ No results found.
     margin-top: -5.5rem !important;
     margin-left: 7.5rem;
     margin-bottom: 0.5rem;
+  }
+  .not-member-txt {
+    width: 236% !important;
   }
 </style>
