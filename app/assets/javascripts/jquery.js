@@ -233,49 +233,40 @@
 
 
 
-// $(document).ready(function () {
-//     $('.carousel-reviews').owlCarousel({
-//         autoplay:true,
-//         autoplaySpeed:1000,
-//         loop: true,
-//         margin: 20,
-//         nav: false,
-//         dots: false,
-//         responsive: {
-//             0: {
-//                 items: 1
-//             },
-//             600: {
-//                 items: 2
-//             },           
-//             1000: {
-//                 items: 3
-//             }
-//         }
-//     });
-// });
+$(document).ready(function () {
+  $('.carousel-reviews').owlCarousel({
+    autoplay:true,
+    autoplaySpeed:1000,
+    loop: true,
+    margin: 20,
+    nav: false,
+    dots: false,
+    responsive: {
+      0: {
+          items: 1
+        },
+        600: {
+        items: 2
+       },           
+      1000: {
+        items: 3
+      }
+    }
+  });
+});
 
 
 
 
 
-// $(document).ready(function(){
-    
-//    $(window).on('scroll',function(){
-//        if($(window).scrollTop() > 100){
-//            console.log(window.screenTop);
-//            $('.nav-bgcolor').addClass('navbar-header-fixed');
-//          }
-//        else
-//            {
-//         $('.nav-bgcolor').removeClass('navbar-header-fixed',500);
-           
-//            }
-
-      
- 
-    
-    
-    
-// });
-// });
+$(document).ready(function(){    
+  $(window).on('scroll',function(){
+    if($(window).scrollTop() > 100){
+      console.log(window.screenTop);
+      $('.nav-bgcolor').addClass('navbar-header-fixed');
+    }
+    else{
+      $('.nav-bgcolor').removeClass('navbar-header-fixed',500);   
+    }  
+  });
+});
