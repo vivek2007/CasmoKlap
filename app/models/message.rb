@@ -1,7 +1,7 @@
 class Message < ApplicationRecord
   validates :location, :address, :full_name, :serve_on, :contact_on, :sub_category_id, :sent_to, :presence => true
 
-  ADMIN_PHONE = "8109969829"
+  ADMIN_PHONE = "9160940328"
 
   def Message.twilio_client
     Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
