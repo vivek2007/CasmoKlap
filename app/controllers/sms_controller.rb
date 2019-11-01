@@ -1,17 +1,27 @@
 class SmsController < ApplicationController
 
   def send_sms
-    @user = User.new(permit_user)
-    @user.password = "password"
-    @user.password_confirmation = "password"
+    @message = Message.new(permit_message_params)
+    lookup_client = Message.twilio_client
+    phone_number = lookup_client.lookups.phone_numbers(params[:message][:contact_on])
     respond_to do |format|
-      if @user.valid?
-        @user.save
-        @user.send_messages
-        format.js
-        format.json
-      else
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+      begin
+        response = phone_number.fetch
+          if @message.valid?
+            @message.save
+            @message.send_messages
+            format.js
+            format.json
+          else
+            format.json { render json: @message.errors, status: :unprocessable_entity }
+          end
+      rescue Twilio::REST::RestError => e
+        @message.errors.messages[:contact_on] = ["Invalid Number"]
+        if e.code == 20404
+          format.json { render json: @message.errors, status: :unprocessable_entity }
+        else
+          format.json { render json: @message.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -29,8 +39,8 @@ class SmsController < ApplicationController
 
   private
 
-  def permit_user
-    params.require(:user).permit(:first_name, :last_name, :email, :phone)
+  def permit_message_params
+    params.require(:message).permit(:full_name, :location, :address, :sub_category_id, :serve_on, :contact_on, :email, :sent_to)
   end
 
 end

@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates_acceptance_of :terms
   validate :first_name
   validate :last_name
+  # validate :full_name
   validates_presence_of :phone, :numericality => true, :length => { :minimum => 10, :maximum => 15 }, :uniqueness => true, :message => "can't be blank"
   attr_accessor :terms, :professional_id
 
@@ -39,16 +40,16 @@ class User < ApplicationRecord
     Twilio::REST::Client.new(ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN'])
   end
 
-  def send_messages
-    begin
-      self.twilio_client.messages.create(
-        body: 'Your request has been processed', 
-        #from: '+19712056208',
-        from: '+14695572455',       
-        to: '+91'+self.phone.to_s 
-      )
-    rescue Exception => e
+  # def send_messages
+  #   begin
+  #     self.twilio_client.messages.create(
+  #       body: 'Your request has been processed', 
+  #       #from: '+19712056208',
+  #       from: '+14695572455',       
+  #       to: '+91'+self.phone.to_s 
+  #     )
+  #   rescue Exception => e
       
-    end
-  end
+  #   end
+  # end
 end

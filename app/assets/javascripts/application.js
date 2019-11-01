@@ -17,6 +17,7 @@
 //= require owl.carousel.min
 //= require jquery.waypoints.min
 //= require jquery.counterup.min
+//= require datetimepicker
 //= require jquery
 //= require jquery-ui
 //= require_self

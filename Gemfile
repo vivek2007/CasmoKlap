@@ -25,6 +25,9 @@ group :assets do
 end
 
 gem 'simple_form', git: 'git://github.com/plataformatec/simple_form.git', branch: 'master' 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-datetimepicker'
+end
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

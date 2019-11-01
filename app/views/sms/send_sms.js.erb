@@ -1,9 +1,7 @@
-<% unless @user.errors.present? %>
-
-  $("#user_email").load(" #user_email");
+<% unless @message.errors.present? %>
   $("#sendMessage").modal('toggle');
-  $(".modal-body input").val("")
+  $(".modal-body input, .modal-body select").val("")
   $(".modal-body .form-group ").css('border-color', 'blue', 'important');
   $(".modal-body .form-group").find('span.help-block').remove();
-
+  location.reload();
 <% end%>

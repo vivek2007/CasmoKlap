@@ -19,8 +19,10 @@ class CategoriesController < ApplicationController
     sub_category = SubCategory.where('lower(name) = ?', "#{params[:categories][:name].downcase}")
     if category.present?
       id = category.last.id
+      @sub_categories = category.last.sub_categories
     elsif sub_category.present?
       id = sub_category.last.id
+      @sub_categories = Category.find(sub_category.last.category_id).sub_categories
     end
     query = make_query(id, params[:categories][:city])
     @results = ActiveRecord::Base.connection.select_all(query).entries if params[:categories][:name].present? && params[:categories][:city].present?
