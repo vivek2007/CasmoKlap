@@ -44,11 +44,13 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
-  # ENV['TWILIO_ACCOUNT_SID'] = "AC7008765c05d2808827ba56e9617f610e"
-  # ENV['TWILIO_AUTH_TOKEN'] = "dcda576d7225a154a90c80b7a8264f5b"
+
+  # ENV['TWILIO_ACCOUNT_SID'] = "AC51bc6c569e198cd2ba13c8d4090421ee"
+  # ENV['TWILIO_AUTH_TOKEN'] = "0db4bf434ee52a2a58737a5765022bf5"
 
   ENV['TWILIO_ACCOUNT_SID'] = "AC51bc6c569e198cd2ba13c8d4090421ee"
   ENV['TWILIO_AUTH_TOKEN'] = "0db4bf434ee52a2a58737a5765022bf5"
+  
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 

@@ -33,6 +33,8 @@ Rails.application.configure do
   config.serve_static_assets = false
 
   config.assets.compress = true
+  ENV['TWILIO_ACCOUNT_SID'] = "AC51bc6c569e198cd2ba13c8d4090421ee"
+  ENV['TWILIO_AUTH_TOKEN'] = "0db4bf434ee52a2a58737a5765022bf5"
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
