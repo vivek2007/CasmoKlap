@@ -14,7 +14,7 @@ class Message < ApplicationRecord
     if user.present?
       message_hash[user.phone] = "Dear Professional, #{self.full_name} sent you reuest for your service on #{self.serve_on} at #{self.location} #{address}."
     end
-    message_hash[Message::ADMIN_PHONE] = "Dear Admin, #{self.full_name} requested to professional #{user.try(:first_name)} #{user.try(:last_name)} on #{self.serve_on} at #{self.location} #{address}.".html_safe
+    message_hash[Message::ADMIN_PHONE] = "Dear Admin, #{self.full_name} requested to professional #{user.try(:first_name)} #{user.try(:last_name)} on this number #{user.try(:phone)}, dated #{self.serve_on} at #{self.location} #{address}.".html_safe
     contacts_arr = [self.contact_on, user.phone, Message::ADMIN_PHONE]
     begin
       contacts_arr.each do |contact|

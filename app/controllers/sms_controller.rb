@@ -2,11 +2,11 @@ class SmsController < ApplicationController
 
   def send_sms
     @message = Message.new(permit_message_params)
-    lookup_client = Message.twilio_client
-    phone_number = lookup_client.lookups.phone_numbers(params[:message][:contact_on])
+    # lookup_client = Message.twilio_client
+    # phone_number = lookup_client.lookups.phone_numbers(params[:message][:contact_on])
     respond_to do |format|
       begin
-        response = phone_number.fetch
+        # response = phone_number.fetch
           if @message.valid?
             @message.save
             @message.send_messages
