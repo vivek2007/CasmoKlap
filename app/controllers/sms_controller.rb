@@ -9,7 +9,7 @@ class SmsController < ApplicationController
         # response = phone_number.fetch
           if @message.valid?
             @message.save
-            @message.send_messages
+            @message.send_messages request.host_with_port
             format.js
             format.json
           else
@@ -24,6 +24,17 @@ class SmsController < ApplicationController
         end
       end
     end
+  end
+
+  def professional_response
+    @message = Message.find(params[:message_id])
+    render :partial => "professional_response", :layout => false
+  end
+
+  def accept_or_reject
+    @message = Message.find(params[:message][:message_id])
+    @message.update(status: params[:message][:status])
+    redirect_to root_path
   end
 
   def send_sms_for_register_user

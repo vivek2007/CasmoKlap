@@ -1,0 +1,27 @@
+<div class="imagebg"></div>
+<div class="row " style="margin-top: 50px">
+  <div class="col-md-6 col-md-offset-3 form-container">
+    <h2>Accept/Reject</h2>
+    <p>
+      Please provide your input for below request:
+    </p>
+    <div class="row">
+      <div class="col-sm-6">
+        Customer Name: <%= @message.full_name %>
+      </div>
+      <div class="col-sm-6">
+        Address: <%= @message.location %> <%= @message.address%>
+      </div>
+      <div class="col-sm-6">
+        Needed Service at: <%= @message.serve_on %>
+      </div>
+      <div class="col-sm-6">
+        Type of service: <%= SubCategory.find(@message.sub_category_id).name %>
+      </div>
+    </div>
+    <%= form_for @message, :url => {:controller => "sms", :action => "accept_or_reject"} do |f| %>
+      <%= f.hidden_field :status, :value => 1 %>
+      <%= f.hidden_field :message_id, :value => @message.id %>
+      <%= f.submit "Accept", class: "btn btn-large btn-success", onclick: "shop_status.value = '1'" %>
+      <%= f.submit "Reject", class: "btn btn-large btn-danger", onclick: "shop_status.value = '0'" %>
+    <% end %>
