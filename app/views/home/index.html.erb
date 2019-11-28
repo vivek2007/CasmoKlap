@@ -13,7 +13,7 @@
           <%= f.input :name, as: :search, input_html: {data: {autocomplete_source: autocomplete_categories_path, remote: true}, placeholder: "Select Category", class: "custom-form-control"}, label: false %>
         </div>
       </div>
-      <div class="form-group btn btn-bg-white form-group-btn">
+      <div class="form-group btn btn-bg-white btn-bg-white-bl form-group-btn">
           <button type="submit" class=" btn-gradient btn banner-btn">Search
           </button>
       </div>
@@ -438,7 +438,7 @@
             </ul>
         </div>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-6 col-md-3">
                 <ul class="list-unstyled">
                     <li class="font-weight">COMPANY</li>
                     <li><a href="#">Reviews</a></li>
@@ -446,7 +446,7 @@
                     <li><a href="#">Blacklisted Professionals</a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-6 col-md-3">
                 <ul class="list-unstyled">
                     <li class="font-weight">SERVING IN</li>
                     <li><a href="#">Vishakhapatnam</a></li>
@@ -455,7 +455,7 @@
                     <li><a href="#">Vijaywada</a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-6 col-md-3">
                 <ul class="list-unstyled">
                     
                     <li><a href="#">Guntur</a></li>
@@ -464,7 +464,7 @@
                     <li><a href="#">Nellore</a></li>
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-6 col-md-3">
                 <ul class="list-unstyled pt-">
                     
                     <li><a href="#">Eluru</a></li>
@@ -552,7 +552,7 @@
     display: block;
     width: 100%;
     height: 50px;
-    padding: 0.375rem 0.75rem;
+    padding: 0.375rem 0.75rem 0.375rem 2rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -570,7 +570,7 @@
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
     height: 50px !important;
-    padding-left: 50px;
+    padding-left: 10px;
     cursor: pointer;
     z-index: 10;
 }

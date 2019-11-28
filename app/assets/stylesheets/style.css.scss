@@ -643,6 +643,8 @@ select {
 }
 
 
+
+
 footer {
     background-color: #1b5559;
 }
@@ -904,12 +906,16 @@ footer a i:hover {
         padding-top: 50px !important
     }
 
+    .banner-content p {
+    padding: 3px 10px;
+    }
+
     .banner h1 {
-        font-size: 2rem
+        font-size: 1.4rem
     }
 
     .banner p {
-        font-size: 1rem
+        font-size: 0.85rem
     }
 
     .banner-form {
@@ -917,9 +923,18 @@ footer a i:hover {
         width: 90%;
 }
 
+.banner .btn {
+    padding: 10px 20px;
+}
+
     .menu-icon:before,
     .text-box:before {
-        top: 4px
+        top: 10px;
+        left: 11px;
+    }
+
+    .menu-icon:before {
+        top: 15px;
     }
 
     form .form-group .select {
@@ -927,8 +942,8 @@ footer a i:hover {
         font-size: 1.3rem;
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
-        height: 40px !important;
-        padding-left: 50px;
+        height: 50px !important;
+        padding-left: 0px;
         cursor: pointer;
         z-index: 10;
     }
@@ -936,9 +951,9 @@ footer a i:hover {
 
     form .form-group .text-box {
         font-size: 1.3rem;
-        border-radius: 0;
-        height: 40px !important;
-        padding-left: 40px;
+        border-radius: 0!important;
+        height: 50px !important;
+        padding-left: 60px;
         width: 250px
     }
 
@@ -949,12 +964,23 @@ footer a i:hover {
         border-left: none;
         padding: 5px 5px !important
     }
+
+    .btn-bg-white-bl {
+    background: none ;
+    padding: 0!important;
+}
+
+    .services .col-12 {
+            flex: 0 0 50%;
+    }
     .categories .container
     {
         padding-left: 30px !important;
     padding-right: 30px !important
     }
-
+    .otherCategories h2 {
+        font-size: 1.4em;
+    }
     .expand-service img {
         width: 120px
     }
